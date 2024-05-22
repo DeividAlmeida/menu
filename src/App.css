@@ -1,38 +1,140 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  box-sizing: border-box;
+  font-family: Montserrat, sans-serif;
+  touch-action: manipulation;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+}
+
+header {
+  background-color: #ff6347;
   color: white;
+  text-align: center;
+  padding: 1rem 0;
 }
 
-.App-link {
-  color: #61dafb;
+.search {
+  width: 30%;
+  min-width: 200px;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+main {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  min-height: 67vh;
+}
+
+.menu {
+  width: 100%;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  gap: 1rem
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 33%;
+  min-width: 350px;
+  display: flex;
+  height: 150px;
+  transition: transform 0.2s;
+  text-decoration: none;
+  color: #000;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  max-width: 120px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.card-content p {
+  color: #555;
+  line-height: 16px;
+  white-space: pre-line;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #ff6347;
+  color: white;
+  margin-top: 2rem; /* Add this line for more space between main content and footer */
+}
+
+/* Personaliza o scrollbar geral */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #b1b1b1; 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3; 
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
 }
