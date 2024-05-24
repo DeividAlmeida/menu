@@ -2,6 +2,7 @@ import React,{ useState, }  from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Item } from "./detail/detail";
+import { SpeedInsights } from "@vercel/speed-insights/react"
 export const allItens = [
   {
     title: "Gourmet Burger",
