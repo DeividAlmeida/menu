@@ -23,5 +23,120 @@ picture > img {
 
 .item-container {
   text-align: left;
-  padding: 10px 10px 0 10px;
+  padding: 10px;
+}
+
+.item-valor{
+  font-weight: 400;
+  font-size: 19.5px;
+  color: #606060;
+}
+
+.item-description{
+  font-weight: 400;
+  font-size: 17.6px;
+  color: #606060;
+  letter-spacing: .2px;
+  white-space: pre-line;
+}
+
+.item-description > p{
+  padding: 0;
+  margin: 0;
+}
+
+.subtitle-box{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.container-size{
+  margin-bottom: 10px;
+}
+
+details{
+  padding: 0 10px;
+}
+
+.title-size {
+  margin: 0;
+  font-size: 25px;
+  padding: 2px;
+  font-weight: 600;
+}
+
+.subtitle{
+  margin: 2px;
+  font-size: 15px;
+  padding: 5px;
+  font-weight: 300;
+}
+
+.select{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.select-on{
+  color: rgb(3, 53, 237);
+  margin: 0;
+  margin-bottom: 1px;
+  border-radius: 10px;
+  font-weight: 650;
+  font-size: 15px;
+}
+
+.select-off{
+  color: rgb(203, 4, 4);
+  margin: 0;
+  margin-bottom: 1px;
+  border-radius: 10px;
+  font-weight: 650;
+  font-size: 15px;
+}
+
+.form-group-box{
+  padding: 0 15px;
+  display: flex;
+}
+
+.form-group-box > div{
+  width: 100%;
+  flex-direction: column;
+}
+
+.form-group-box > div > div{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group-box > div > div > label{
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.form-group-box > .title-subtitle-box{
+  display: flex;
+  flex-direction: column;
+}
+
+.hr{
+  color: black;
+  border: solid 0.1;
+  width: 95%;
+}
+
+.title-subtitle-box > .check-title{
+  font-weight: 600;
+}
+
+.title-subtitle-box > .check-subtitle{
+  font-size: 14px;
+  font-weight: 300;
 }

@@ -6,68 +6,161 @@ import { SpeedInsights } from "@vercel/speed-insights/react"
 export const allItens = [
   {
     title: "Gourmet Burger",
-    description: "Experience the taste of gourmet burgers with this simple yet delicious recipe.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM="
+    flavor: 0,
+    description: "Calabresa Acebolada",
+    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    details: {
+      price: "R$ 30,00",
+      size: "F",
+      pizza_dough: "515gr",
+      igredients: "30gr de Muçarela, 40gr de Calabresa, 2 Azeitonas, Orégano",
+      total_weight: "587"
+    }
+  },
+  {
+    title: "Luzense",
+    flavor: 1,
+    description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
+    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    details: {
+      price: "R$ 32,00",
+      size: "F",
+      pizza_dough: "515gr",
+      igredients: "30gr de Muçarela, 35gr de Carne, 5gr de Banana-da-Terra, 2 Azeitonas, Orégano",
+      total_weight: "587"
+    }
   },
   {
     title: "Italian Pasta",
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM="
+    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    details: {
+      price: "R$ 30,00",
+      size: "F",
+      pizza_dough: "515gr",
+      igredients: "30gr de Muçarela, 40gr de Calabresa, 2 Azeitonas, Orégano",
+      total_weight: "587"
+    }
   },
   {
     title: "Italian Pasta",
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM="
+    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    details: {
+      price: "R$ 30,00",
+      size: "F",
+      pizza_dough: "515gr",
+      igredients: "30gr de Muçarela, 40gr de Calabresa, 2 Azeitonas, Orégano",
+      total_weight: "587"
+    }
   },
   {
     title: "Italian Pasta",
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM="
+    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    details: {
+      price: "R$ 30,00",
+      size: "F",
+      pizza_dough: "515gr",
+      igredients: "30gr de Muçarela, 40gr de Calabresa, 2 Azeitonas, Orégano",
+      total_weight: "587"
+    }
   },
   {
     title: "Italian Pasta",
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM="
+    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    details: {
+      price: "R$ 30,00",
+      size: "F",
+      pizza_dough: "515gr",
+      igredients: "30gr de Muçarela, 40gr de Calabresa, 2 Azeitonas, Orégano",
+      total_weight: "587"
+    }
   },
   {
     title: "Italian Pasta",
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM="
+    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    details: {
+      price: "R$ 30,00",
+      size: "F",
+      pizza_dough: "515gr",
+      igredients: "30gr de Muçarela, 40gr de Calabresa, 2 Azeitonas, Orégano",
+      total_weight: "587"
+    }
   },
   {
     title: "Italian Pasta",
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM="
+    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    details: {
+      price: "R$ 30,00",
+      size: "F",
+      pizza_dough: "515gr",
+      igredients: "30gr de Muçarela, 40gr de Calabresa, 2 Azeitonas, Orégano",
+      total_weight: "587"
+    }
   },
   {
     title: "Italian Pasta",
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM="
+    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    details: {
+      price: "R$ 30,00",
+      size: "F",
+      pizza_dough: "515gr",
+      igredients: "30gr de Muçarela, 40gr de Calabresa, 2 Azeitonas, Orégano",
+      total_weight: "587"
+    }
   },
   {
     title: "Italian Pasta",
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM="
+    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    details: {
+      price: "R$ 30,00",
+      size: "F",
+      pizza_dough: "515gr",
+      igredients: "30gr de Muçarela, 40gr de Calabresa, 2 Azeitonas, Orégano",
+      total_weight: "587"
+    }
   },
   {
     title: "Italian Pasta",
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM="
+    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    details: {
+      price: "R$ 30,00",
+      size: "F",
+      pizza_dough: "515gr",
+      igredients: "30gr de Muçarela, 40gr de Calabresa, 2 Azeitonas, Orégano",
+      total_weight: "587"
+    }
   },
   {
     title: "Italian Pasta",
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM="
-  },
-  {
-    title: "Italian Pasta",
-    description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM="
+    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    details: {
+      price: "R$ 30,00",
+      size: "F",
+      pizza_dough: "515gr",
+      igredients: "30gr de Muçarela, 40gr de Calabresa, 2 Azeitonas, Orégano",
+      total_weight: "587"
+    }
   },
   {
     title: "Healthy Salad",
     description: "Stay healthy and fit with this fresh and nutritious salad recipe.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM="
+    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    details: {
+      price: "R$ 30,00",
+      size: "F",
+      pizza_dough: "515gr",
+      igredients: "30gr de Muçarela, 40gr de Calabresa, 2 Azeitonas, Orégano",
+      total_weight: "587"
+    }
   }
 ];
 
