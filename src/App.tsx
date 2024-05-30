@@ -8,7 +8,7 @@ export const allItens = [
     title: "Gourmet Burger",
     flavor: 0,
     description: "Calabresa Acebolada",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       price: "R$ 30,00",
       size: "F",
@@ -21,7 +21,7 @@ export const allItens = [
     title: "Luzense",
     flavor: 1,
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       price: "R$ 32,00",
       size: "F",
@@ -33,7 +33,7 @@ export const allItens = [
   {
     title: "Italian Pasta",
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       price: "R$ 30,00",
       size: "F",
@@ -45,7 +45,7 @@ export const allItens = [
   {
     title: "Italian Pasta",
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       price: "R$ 30,00",
       size: "F",
@@ -57,7 +57,7 @@ export const allItens = [
   {
     title: "Italian Pasta",
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       price: "R$ 30,00",
       size: "F",
@@ -69,7 +69,7 @@ export const allItens = [
   {
     title: "Italian Pasta",
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       price: "R$ 30,00",
       size: "F",
@@ -81,7 +81,7 @@ export const allItens = [
   {
     title: "Italian Pasta",
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       price: "R$ 30,00",
       size: "F",
@@ -93,7 +93,7 @@ export const allItens = [
   {
     title: "Italian Pasta",
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       price: "R$ 30,00",
       size: "F",
@@ -105,7 +105,7 @@ export const allItens = [
   {
     title: "Italian Pasta",
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       price: "R$ 30,00",
       size: "F",
@@ -117,7 +117,7 @@ export const allItens = [
   {
     title: "Italian Pasta",
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       price: "R$ 30,00",
       size: "F",
@@ -129,7 +129,7 @@ export const allItens = [
   {
     title: "Italian Pasta",
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       price: "R$ 30,00",
       size: "F",
@@ -141,7 +141,7 @@ export const allItens = [
   {
     title: "Italian Pasta",
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       price: "R$ 30,00",
       size: "F",
@@ -153,7 +153,7 @@ export const allItens = [
   {
     title: "Healthy Salad",
     description: "Stay healthy and fit with this fresh and nutritious salad recipe.",
-    image: "https://media.istockphoto.com/id/1349560406/pt/foto/pepperoni-pizza-with-a-slice-taken-out-with-cheese-pull.jpg?s=612x612&w=is&k=20&c=OfRpIVyzFVSwQ5FhZRrdNbyggQYDOC0s18IHMQHpvRM=",
+    image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       price: "R$ 30,00",
       size: "F",

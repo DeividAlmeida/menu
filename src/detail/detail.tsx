@@ -10,18 +10,19 @@ export const Item = () => {
     <div className="product-details">
 
 
-      <div className="share-icon">
-        <a href="#">
-          <i className="fa-solid fa-share-from-square"></i>
-        </a>
-      </div>
 
-      <div className="back-icon">
-        <a href="/">
-          <i className="fa-solid fa-left-long"></i>
-        </a>
+      <div className="control">
+        <div className="back-icon">
+          <a href="/">
+            <i className="fa-solid fa-left-long"></i>
+          </a>
+        </div>
+        <div className="share-icon">
+          <a href="#">
+            <i className="fa-solid fa-share-from-square"></i>
+          </a>
+        </div>
       </div>
-
       <picture>
         <img src={item.image} alt="" />
       </picture>
