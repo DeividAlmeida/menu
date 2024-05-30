@@ -8,6 +8,20 @@ export const Item = () => {
 
   return (
     <div className="product-details">
+
+
+      <div className="share-icon">
+        <a href="#">
+          <i className="fa-solid fa-share-from-square"></i>
+        </a>
+      </div>
+
+      <div className="back-icon">
+        <a href="/">
+          <i className="fa-solid fa-left-long"></i>
+        </a>
+      </div>
+
       <picture>
         <img src={item.image} alt="" />
       </picture>
@@ -20,8 +34,17 @@ export const Item = () => {
           <p>Igredientes: {item.details?.igredients}</p>
         </div>
       </div>
-      <hr className="hr" />
-      <div className="container-size">
+      
+      <a className="next-button" href="#">Adicionar ao carrinho</a>
+
+    </div>
+
+
+  )
+}
+
+/**
+ * <div className="container-size">
         <details>
           <summary className="title-size">Adicionais</summary>
           <div className="subtitle-box">
@@ -81,16 +104,4 @@ export const Item = () => {
           </div>
         </details>
       </div>
-
-      <hr className="hr" />
-
-      <div className="next-container">
-
-      </div>
-
-
-    </div>
-
-
-  )
-}
+ */
