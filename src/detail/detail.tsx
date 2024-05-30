@@ -15,26 +15,21 @@ export const Item = () => {
         <div className="item-title">
           <h1>{item.title}</h1>
         </div>
-        <div className="item-valor">
-          <p>{item.details?.price}</p>
-        </div>
+
         <div className="item-description">
-          <p>Tamanho: {item.details?.size}</p>
-
           <p>Igredientes: {item.details?.igredients}</p>
-
         </div>
       </div>
       <hr className="hr" />
       <div className="container-size">
         <details>
-          <summary className="title-size">Tamanhos</summary>
+          <summary className="title-size">Adicionais</summary>
           <div className="subtitle-box">
             <div className="select">
-              <span className="subtitle">Escolha 1 Tamanho</span>
+              <span className="subtitle">Bordas</span>
             </div>
             <div className="icon-title-box">
-              <div className="select-on">Seleciondo</div>
+              <div className="select-on">Selecionado</div>
             </div>
           </div>
           <hr className="hr" />
@@ -43,69 +38,55 @@ export const Item = () => {
               <div>
                 <label htmlFor="">
                   <div className="title-subtitle-box">
-                    <div className="check-title">Família</div>
-                    <div className="check-subtitle">12 Fatias</div>
+                    <div className="check-title">Mussarela</div>
+                    <div className="check-subtitle">R$ 5,00</div>
                   </div>
                   <input className="check-icon" type="radio" name="size" id="" />
                 </label>
                 <hr className="hr" />
                 <label htmlFor="">
                   <div className="title-subtitle-box">
-                    <div className="check-title">Grande</div>
-                    <div className="check-subtitle">8 Fatias</div>
+                    <div className="check-title">Catupiry</div>
+                    <div className="check-subtitle">R$ 5,00</div>
                   </div>
                   <input className="check-icon" type="radio" name="size" id="" />
                 </label>
                 <hr className="hr" />
                 <label htmlFor="">
                   <div className="title-subtitle-box">
-                    <div className="check-title">Média</div>
-                    <div className="check-subtitle">6 Fatias</div>
+                    <div className="check-title">Cheddar</div>
+                    <div className="check-subtitle">R$ 5,00</div>
                   </div>
                   <input className="check-icon" type="radio" name="size" id="" />
                 </label>
                 <hr className="hr" />
                 <label htmlFor="">
                   <div className="title-subtitle-box">
-                    <div className="check-title">Pequena</div>
-                    <div className="check-subtitle">4 Fatias</div>
+                    <div className="check-title">Doce de Leite</div>
+                    <div className="check-subtitle">R$ 5,00</div>
                   </div>
                   <input className="check-icon" type="radio" name="size" id="" />
                 </label>
-
+                <hr className="hr" />
+                <label htmlFor="">
+                  <div className="title-subtitle-box">
+                    <div className="check-title">Brigadeiro</div>
+                    <div className="check-subtitle">R$ 5,00</div>
+                  </div>
+                  <input className="check-icon" type="radio" name="size" id="" />
+                </label>
+                <hr className="hr" />
               </div>
             </div>
           </div>
         </details>
       </div>
+
       <hr className="hr" />
 
+      <div className="next-container">
 
-      <div className="container-size">
-        <details>
-          <summary className="title-size">Sabores Adicionais</summary>
-          <div className="subtitle-box">
-            <div className="select">
-              <span className="subtitle">Escolha até mais 2 sabores</span>
-            </div>
-            <div className="icon-title-box">
-              <div className="select-on">Seleciondo</div>
-            </div>
-          </div>
-          <hr className="hr" />
-          <details>
-            <summary className="title-size">Sabores Promocionais</summary>
-
-          </details>  
-          <hr className="hr" />
-          <details>
-            <summary className="title-size">Sabores Especiais</summary>
-            
-          </details>
-
-        </details>
       </div>
-
 
 
     </div>
