@@ -61,7 +61,7 @@ picture > img {
 
 .item-description{
   position: relative;
-  min-height: 90px;
+  min-height: 50px;
   font-weight: 400;
   font-size: 17.6px;
   color: #606060;
@@ -110,29 +110,6 @@ details{
   
 }
 
-.input:checked + .select-on{
-  display:block;
-}
-
-.select-on{
-  display: none;
-  color: rgb(3, 53, 237);
-  margin: 0;
-  margin-bottom: 1px;
-  border-radius: 10px;
-  font-weight: 650;
-  font-size: 15px;
-}
-
-.select-off{
-  color: rgb(203, 4, 4);
-  margin: 0;
-  margin-bottom: 1px;
-  border-radius: 10px;
-  font-weight: 650;
-  font-size: 15px;
-}
-
 .form-group-box{
   padding: 0 15px;
   display: flex;
@@ -149,12 +126,12 @@ details{
   flex-direction: column;
 }
 
-.form-group-box > div > div > label{
+.form-group-box > div > div > div{
   padding: 5px;
   display: flex;
   justify-content: space-between;
-  
 }
+
 
 .form-group-box > .title-subtitle-box{
   display: flex;
@@ -171,21 +148,37 @@ details{
   font-weight: 600;
 }
 
+.price{
+  margin: 1px;
+  padding: 5px;
+}
+
 .title-subtitle-box > .check-subtitle{
   font-size: 14px;
   font-weight: 300;
 }
 
-.next-button{
-  text-decoration: none;
-  color: white;
-  margin-top: 2px;
-  padding: 15px 105px;
-  background-color: rgb(48, 138, 255);
-  text-wrap: nowrap ;
-  border-radius: 5px;
+.next-button-box{
+  height: 50px;
   position: fixed;
   left: 0;
   bottom: 0;
   right: 0;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.952);
+  box-shadow: 0 -1px 3px 0.1px rgb(165, 165, 165);
 }
+
+.next-button{
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  background-color: rgb(48, 138, 255);
+  text-wrap: nowrap ;
+  border-radius: 5px;
+  position: fixed;
+  left: 15px;
+  bottom: 6px;
+  right: 15px;
+}
+
