@@ -122,12 +122,77 @@ header {
   overflow: hidden;
 }
 
+/* nav bar */
+
+.nav-bar-down{
+  box-shadow: 0 -1px 3px 0.1px rgb(165, 165, 165);
+  display: flex;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f1f1f1;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.nav-btn{
+  text-decoration: none;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  color: rgb(114, 114, 114);
+  font-weight: 550;
+}
+
+.nav-btn:hover{
+  color: #ff8912;
+}
+
+.animation-nav-btn{
+  position: absolute;
+  background-color: #ff8912;
+  height: 4px;
+  left: 30px;
+  bottom: 65px;
+  transition: all .5s ease 0s;
+}
+
+a:nth-child(1){
+  width: 45px;
+}
+
+nav .start-home, a:nth-child(1):hover~.animation-nav-btn{
+  width: 60px;
+  left: 30px;
+}
+
+a:nth-child(2){
+  width: 45px;
+}
+
+nav .start-my-order, a:nth-child(2):hover~.animation-nav-btn{
+  width: 65px;
+  left: 153px;
+}
+
+a:nth-child(3){
+  width: 45px;
+}
+
+nav .start-cart, a:nth-child(3):hover~.animation-nav-btn{
+  width: 60px;
+  left: 300px;
+}
+
+
 footer {
   text-align: center;
-  padding: 1rem 0;
+  /* padding: 1rem 0; */
   background-color: #ff6347;
   color: white;
-  position: relative;
+  /*position: relative; */
   bottom: 0;
   left: 0;
   width: 100%;
