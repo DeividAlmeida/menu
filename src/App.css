@@ -124,10 +124,10 @@ header {
 
 footer {
   text-align: center;
-  padding: 1rem 0;
+  /* padding: 1rem 0; */
   background-color: #ff6347;
   color: white;
-  position: relative;
+  /*position: relative; */
   bottom: 0;
   left: 0;
   width: 100%;
