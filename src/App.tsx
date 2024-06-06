@@ -2,7 +2,9 @@ import React, { useState, } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Item } from "./detail/detail";
-import { Cart } from "./cart/cart"
+import { Cart } from "./cart/cart";
+import { Order } from "./myOrder/myOrder"
+import { Nav } from "./nav/nav"
 export const allItens = [
   {
     title: "Gourmet Burger",
@@ -248,7 +250,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/:id" element={<Item />} />
           <Route path="cart" element={<Cart />} />
+          <Route path='my-order' element={<Order />} />
         </Routes>
+        <Nav />
       </main>
     </Router>
   );
@@ -285,25 +289,7 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <nav className="nav-bar-down">
-        
-          <a className='nav-btn' href="/">
-            <i className="fa-solid fa-house"></i>
-            Início
-          </a>
-        
-          <a className='nav-btn' href="/my-order">
-            <i className="fa-solid fa-clipboard-list"></i>
-            Pedidos
-          </a>
-        
-          <a className='nav-btn' href="/cart">
-            <i className="fa-solid fa-cart-shopping"></i>
-            Carrinho
-          </a>
-
-          <div className="animation-nav-btn start-home"></div>
-      </nav>
+      {/* <Nav /> */}
       <footer>
         <p>&copy; 2024 Gui Pizza</p>
       </footer>
