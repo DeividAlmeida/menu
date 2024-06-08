@@ -179,19 +179,15 @@ textarea, input {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
   background-clip: padding-box;
   border: #dedede solid 1px;
   border-radius: 5px;
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-}
-label {
   display: inline-block;
   margin-bottom: .5rem;
   margin-top: .5rem;
 }
+
 
 button {
   --bs-btn-padding-x: 0.75rem;

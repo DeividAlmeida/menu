@@ -34,11 +34,16 @@
   font-weight: bold;
   font-size: 12px;
   position: relative;
-  cursor: pointer;
   border-radius: 5px 5px 0 0;
   border: solid #dedede  1px;
   border-bottom: 0px;
   flex-flow: column;
+}
+.cart-form {
+  border-radius: 5px;
+  border-bottom: 1px #dedede solid;
+  padding: 30px 0;
+  width: 95%;
 }
 .item-header {
   background: #f5f5f5;
@@ -142,10 +147,20 @@
   align-self: flex-start;
   height: 100%;
 }
+
 .cart-form-column {
   width: 45%;
   display: flex;
   justify-content: space-around;
   flex-flow: column;
-    min-width: 300px;
+  min-width: 300px;
+  padding: 10px;
+}
+
+.form-check > label {
+  cursor: pointer;
+}
+.radio-lable {
+  font-size: medium;
+  text-align: center;
 }
