@@ -48,6 +48,43 @@ export const Cart = () => {
             R$ 30,00
           </p>
         </div>
+        <h1 className="cart-title">Endereço de entrega</h1>
+        <div className="cart-box cart-form">
+          <div className="cart-form-row">
+            <div className="cart-form-column">
+              <input type="text" name="name" placeholder="Nome" />
+            </div>
+            <div className="cart-form-column">
+              <input type="number" name="phone" id="" placeholder="Whatsapp" />
+            </div>
+          
+            <div className="cart-form-column">
+              <input type="text" name="address" id="" placeholder="Endereço" />
+            </div>
+            <div className="cart-form-column">
+              <input type="text" name="number" id="" placeholder="Número"/>
+            </div>
+            
+            <div className="cart-form-column">
+              <label htmlFor="number" className="radio-lable">Enderço de entrega é fora da cidade?</label>
+              <div className="form-check">
+                <input className="form-check-input" type="radio" name="out_town" id="yes"/>
+                <label className="form-check-label" htmlFor="yes">
+                    Sim
+                </label>
+              </div>
+              <div className="form-check">
+                <input className="form-check-input" type="radio" name="out_town" id="no"/>
+                <label className="form-check-label" htmlFor="no">
+                    Não
+                </label>
+              </div>
+            </div>          
+            <div className="cart-form-column" id="complement">
+              <textarea  name="complement" id="" placeholder="Complemento"/>
+            </div>
+          </div>
+        </div>
 
         <div className="total-price">
           <div className="price-box">
@@ -62,34 +99,6 @@ export const Cart = () => {
             <span className="total-price-label">Total</span>
             <strong className="total-price-value">R$ 35,00</strong>
           </div>
-        </div>
-        <div className="cart-box">
-          <h2 className="cart-title">Endereço de entrega</h2>
-          <div className="cart-form-row">
-            <div className="cart-form-column">
-              <label htmlFor="name">Nome</label>
-              <input type="text" name="name" />
-            </div>
-            <div className="cart-form-column">
-              <label htmlFor="phone">Whatsapp</label>
-              <input type="number" name="phone" id="" />
-            </div>
-          
-            <div className="cart-form-column">
-              <label htmlFor="address">Endereço</label>
-              <input type="text" name="address" id="" />
-            </div>
-            <div className="cart-form-column">
-              <label htmlFor="number">Número</label>
-              <input type="text" name="number" id="" />
-            </div>
-          
-            <div className="cart-form-column">
-              <label htmlFor="complement">Complemento</label>
-              <input type="text" name="complement" id="" />
-            </div>
-          </div>
-          <button className="btn btn-primary">Finalizar Pedido</button>
         </div>
       </div>
     </section>
