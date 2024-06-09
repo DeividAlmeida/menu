@@ -167,6 +167,7 @@ details{
   text-align: center;
   background-color: rgba(255, 255, 255, 0.952);
   box-shadow: 0 -1px 3px 0.1px rgb(165, 165, 165);
+  z-index: 1;
 }
 
 .next-button{

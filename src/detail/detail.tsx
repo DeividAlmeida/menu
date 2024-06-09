@@ -1,16 +1,29 @@
 import { useParams } from "react-router-dom";
-import { allItens } from "../App";
+import { useContext } from 'react';
+import { allItens, CartContext } from "../App";
 import "./detail.css";
+type CartContextType = {
+  cart: IItem[];
+  addOrder: React.Dispatch<React.SetStateAction<IItem[] | []>>;
+};
+interface IItem {
+  title: string;
+  image: string;
+  description: string;
+  details?: any;
+  flavor?: any;
+}
 export const Item = () => {
   let { id } = useParams();
   let index = id ? parseInt(id) : 0;
   const item = allItens[index];
-
+  const { cart , addOrder } = useContext(CartContext) as CartContextType;
+  const addCart = () =>  {
+    addOrder([allItens[index]])
+    console.log(cart);
+  }
   return (
     <div className="product-details">
-
-
-
       <div className="control">
         <div className="back-icon">
           <a href="/">
@@ -96,7 +109,12 @@ export const Item = () => {
       </div>
 
       <div className="next-button-box">
-        <a className="next-button" href="#">Adicionar ao carrinho</a>
+        <a 
+          className="next-button" 
+          onClick={()=>addCart()}
+        >
+          Adicionar ao carrinho
+        </a>
       </div>
 
     </div>

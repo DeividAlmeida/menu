@@ -3,10 +3,15 @@ export const Cart = () => {
   return (
     <section className="cart">
       <div className="container">
+        <a href="/" className="back-box">
+          <button className="back">
+                <i className="fa-solid fa-arrow-left" />
+          </button>
+        </a>
         <h1 className="cart-title">Seu Pedido</h1>
         <details className="cart-box" open>
           <summary className="item-header">
-              <button className="fa-trash ">lixo</button>
+              <button className="danger" ><i className="fa-solid fa-trash"></i></button>
               <h2 className="item-name">Pizza Media</h2>
             <div className="item-header">
             </div>
@@ -15,15 +20,15 @@ export const Cart = () => {
             <div className="content">
               <div className="item-info">
                 <p className="item-taste">Pepperoni Pizza</p>
-                <p className="item-remove">x</p>
+                <p className="item-remove"><i className="fa-solid fa-xmark"></i></p>
               </div>
               <div className="item-info">
                 <p className="item-taste">Pepperoni Pizza</p>
-                <p className="item-remove">x</p>
+                <p className="item-remove"><i className="fa-solid fa-xmark"></i></p>
               </div>
               <div className="item-info">
                 <p className="item-taste">Pepperoni Pizza</p>
-                <p className="item-remove">x</p>
+                <p className="item-remove"><i className="fa-solid fa-xmark"></i></p>
               </div>
               
             </div>

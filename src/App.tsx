@@ -1,11 +1,19 @@
-import React, { useState, } from 'react';
+import React, { useState, createContext } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Home } from "./home/home";
 import { Item } from "./detail/detail";
 import { Cart } from "./cart/cart";
 import { Order } from "./myOrder/myOrder"
 import { Nav } from "./nav/nav"
-export const allItens = [
+interface IItem {
+  title: string;
+  image: string;
+  description: string;
+  details?: any;
+  flavor?: any;
+}
+export const allItens: IItem[] = [
   {
     title: "Gourmet Burger",
     flavor: {
@@ -241,59 +249,30 @@ export const allItens = [
     }
   }
 ];
-
+type CartContextType = {
+  cart: IItem[];
+  addOrder: React.Dispatch<React.SetStateAction<IItem[] | []>>;
+};
+export const CartContext = createContext<CartContextType | any[]>([]);
 function App() {
+  const [cart, setCart] = useState<any[]>([]);
+    const addOrder = (cart: any) => {
+      setCart(cart)
+    }
   return (
     <Router>
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/:id" element={<Item />} />
-          <Route path="cart" element={<Cart />} />
-          <Route path='my-order' element={<Order />} />
-        </Routes>
-        <Nav />
-      </main>
+      <CartContext.Provider value={{ cart, addOrder }}>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/:id" element={<Item />} />
+            <Route path="cart" element={<Cart />} />
+            <Route path='my-order' element={<Order />} />
+          </Routes>
+          <Nav />
+        </main>
+      </CartContext.Provider>
     </Router>
   );
 }
-
-const Home = () => {
-  const [filteredItens, setFilteredItens] = useState(allItens);
-  function searchItem(event: React.ChangeEvent<HTMLInputElement>) {
-    const query = event.target.value;
-    setFilteredItens(
-      allItens.filter(item => {
-        return item.title.toLowerCase().includes(query.toLowerCase()) || item.description.toLowerCase().includes(query.toLowerCase());
-      })
-    );
-  }
-  return (
-    <div className="home">
-      <header>
-        <h1>Delicious Gui Pizza</h1>
-        <div className="filter">
-          <input type="text" placeholder="Encontre sua pizza" onChange={searchItem} className="search" />
-        </div>
-      </header>
-      <div className="menu">
-        <div className="card-container">
-          {filteredItens.map((item: any, index: number) => (
-            <a className="card" key={index} href={`/${index}`}>
-              <img src={item.image} alt={item.title} />
-              <div className="card-content">
-                <h4>{item.title}</h4>
-                <p>{item.description}</p>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-      {/* <Nav /> */}
-      <footer>
-        <p>&copy; 2024 Gui Pizza</p>
-      </footer>
-    </div>
-  )
-};
 export default App;
