@@ -3,11 +3,11 @@ export const Cart = () => {
   return (
     <section className="cart">
       <div className="container">
-        <a href="/" className="back-box">
-          <button className="back">
+        <div className="back-box">
+          <a href="/" className="back">
                 <i className="fa-solid fa-arrow-left" />
-          </button>
-        </a>
+          </a>
+        </div>
         <h1 className="cart-title">Seu Pedido</h1>
         <details className="cart-box" open>
           <summary className="item-header">
