@@ -24,7 +24,9 @@ export const Cart = () => {
               </div>
               <div className="item-info">
                 <p className="item-taste">Pepperoni Pizza</p>
-                <p className="item-remove"><i className="fa-solid fa-xmark"></i></p>
+                <p className="item-remove">
+                  <i className="fa-solid fa-xmark"></i>
+                </p>
               </div>
               <div className="item-info">
                 <p className="item-taste">Pepperoni Pizza</p>
@@ -40,7 +42,9 @@ export const Cart = () => {
                   Borda de cheddar
                   <i className="item-complement-price"> - R$ 5,00</i>
                 </p>
-                  <p className="item-remove">x</p>
+                  <p className="item-remove">
+                    <i className="fa-solid fa-xmark" />
+                  </p>
               </div>
             </div>
           </div>
