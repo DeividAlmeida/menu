@@ -263,12 +263,16 @@ function App() {
     <Router>
       <CartContext.Provider value={{ cart, addOrder }}>
         <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/:id" element={<Item />} />
-            <Route path="cart" element={<Cart />} />
-            <Route path='my-order' element={<Order />} />
-          </Routes>
+          <section>
+            <div className="container">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/:id" element={<Item />} />
+                <Route path="cart" element={<Cart />} />
+                <Route path='my-order' element={<Order />} />
+              </Routes>
+            </div>
+          </section>
           <Nav />
         </main>
       </CartContext.Provider>
