@@ -11,19 +11,11 @@ interface IItem {
   image: string;
   description: string;
   details?: any;
-  flavor?: any;
 }
+
 export const allItens: IItem[] = [
   {
     title: "Gourmet Burger",
-    flavor: {
-      promotional: {
-        family: "30,00",
-        big: "25,00",
-        average: "20,00",
-        small: "15,00"
-      }
-    },
     description: "Calabresa Acebolada",
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
@@ -34,14 +26,6 @@ export const allItens: IItem[] = [
   },
   {
     title: "Luzense",
-    flavor: {
-      special: {
-        family: "32,00",
-        big: "27,00",
-        average: "22,00",
-        small: "17,00"
-      }
-    },
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
@@ -52,14 +36,6 @@ export const allItens: IItem[] = [
   },
   {
     title: "Gourmet Burger",
-    flavor: {
-      promotional: {
-        family: "30,00",
-        big: "25,00",
-        average: "20,00",
-        small: "15,00"
-      }
-    },
     description: "Calabresa Acebolada",
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
@@ -70,14 +46,6 @@ export const allItens: IItem[] = [
   },
   {
     title: "Gourmet Burger",
-    flavor: {
-      promotional: {
-        family: "30,00",
-        big: "25,00",
-        average: "20,00",
-        small: "15,00"
-      }
-    },
     description: "Calabresa Acebolada",
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
@@ -88,14 +56,6 @@ export const allItens: IItem[] = [
   },
   {
     title: "Gourmet Burger",
-    flavor: {
-      promotional: {
-        family: "30,00",
-        big: "25,00",
-        average: "20,00",
-        small: "15,00"
-      }
-    },
     description: "Calabresa Acebolada",
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
@@ -106,14 +66,6 @@ export const allItens: IItem[] = [
   },
   {
     title: "Gourmet Burger",
-    flavor: {
-      promotional: {
-        family: "30,00",
-        big: "25,00",
-        average: "20,00",
-        small: "15,00"
-      }
-    },
     description: "Calabresa Acebolada",
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
@@ -124,14 +76,6 @@ export const allItens: IItem[] = [
   },
   {
     title: "Gourmet Burger",
-    flavor: {
-      promotional: {
-        family: "30,00",
-        big: "25,00",
-        average: "20,00",
-        small: "15,00"
-      }
-    },
     description: "Calabresa Acebolada",
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
@@ -142,14 +86,6 @@ export const allItens: IItem[] = [
   },
   {
     title: "Gourmet Burger",
-    flavor: {
-      promotional: {
-        family: "30,00",
-        big: "25,00",
-        average: "20,00",
-        small: "15,00"
-      }
-    },
     description: "Calabresa Acebolada",
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
@@ -160,14 +96,6 @@ export const allItens: IItem[] = [
   },
   {
     title: "Gourmet Burger",
-    flavor: {
-      promotional: {
-        family: "30,00",
-        big: "25,00",
-        average: "20,00",
-        small: "15,00"
-      }
-    },
     description: "Calabresa Acebolada",
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
@@ -178,14 +106,6 @@ export const allItens: IItem[] = [
   },
   {
     title: "Gourmet Burger",
-    flavor: {
-      promotional: {
-        family: "30,00",
-        big: "25,00",
-        average: "20,00",
-        small: "15,00"
-      }
-    },
     description: "Calabresa Acebolada",
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
@@ -196,14 +116,6 @@ export const allItens: IItem[] = [
   },
   {
     title: "Gourmet Burger",
-    flavor: {
-      promotional: {
-        family: "30,00",
-        big: "25,00",
-        average: "20,00",
-        small: "15,00"
-      }
-    },
     description: "Calabresa Acebolada",
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
@@ -214,14 +126,6 @@ export const allItens: IItem[] = [
   },
   {
     title: "Luzense",
-    flavor: {
-      special: {
-        family: "32,00",
-        big: "27,00",
-        average: "22,00",
-        small: "17,00"
-      }
-    },
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
@@ -232,14 +136,6 @@ export const allItens: IItem[] = [
   },
   {
     title: "Luzense",
-    flavor: {
-      special: {
-        family: "32,00",
-        big: "27,00",
-        average: "22,00",
-        small: "17,00"
-      }
-    },
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
@@ -249,9 +145,81 @@ export const allItens: IItem[] = [
     }
   }
 ];
+
+
+export const categories = [
+  {
+    type: "small_size",
+    description: "Pequena",
+    tastes: 1,
+    size: 4,
+    normal: 15.00,
+    promocional: 10.00
+  },
+  {
+    type: "medium_size",
+    description: "Média",
+    tastes: 2,
+    size: 6,
+    normal: 20.00,
+    promocional: 10.00
+  },
+  {
+    type: "large_size",
+    description: "Grande",
+    tastes: 2,
+    size: 8,
+    normal: 20.00,
+    promocional: 10.00
+  },
+  {
+    type: "family_size",
+    tastes: 3,
+    description: "Família",
+    size:12,
+    normal: 20.00,
+    promocional: 10.00
+  }
+]
+
+export const border = [
+  {
+    key: "0",
+    description: "Cheddar", 
+    price: 5.00
+  },
+  {
+    key: "1",
+    description: "Catupiry",
+    price: 5.00
+  },
+  {
+    key: "2",
+    description: "Mussarela",
+    price: 5.00
+  },
+  {
+    key: "3",
+    description: "Brigadeiro",
+    price: 5.00
+  },
+  {
+    key: "4",
+    description: "Doce de leite",
+    price: 5.00
+  },
+  {
+    key: "4",
+    description: "Sem borda", 
+    price: 0.00
+  }
+];
+
 type CartContextType = {
   cart: IItem[];
-  addOrder: React.Dispatch<React.SetStateAction<IItem[] | []>>;
+  addOrder: React.Dispatch<React.SetStateAction<IItem[] | [
+
+  ]>>;
 };
 export const CartContext = createContext<CartContextType | any[]>([]);
 function App() {

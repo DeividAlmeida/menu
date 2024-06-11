@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useContext } from 'react';
-import { allItens, CartContext } from "../App";
+import { allItens, border, categories, CartContext } from "../App";
 import "./detail.css";
+import { currencyToString } from "../utils/index";
 type CartContextType = {
   cart: IItem[];
   addOrder: React.Dispatch<React.SetStateAction<IItem[] | []>>;
@@ -50,56 +51,27 @@ export const Item = () => {
           </summary>
           <div className="item-body">
             <div className="content">
-              <div className="item-info size-body-box">
-                <div className="title-subtitle-box">
-                  <div className="check-title">Pequena</div>
-                  <div className="price">
-                    R$ {item.flavor?.promotional?.small} {item.flavor?.special?.small}
-                  </div>
-                  <div className="check-subtitle">4 Fatias e até 2 sabores </div>
-                </div>
-                <p>
-                  <input type="radio" id="small-size" name="size" />
-                  <label htmlFor="small-size"></label>
-                </p>
-              </div>
-
-              <div className="item-info size-body-box" >
-                <div className="title-subtitle-box">
-                  <div className="check-title">Média</div>
-                  <div className="price">R$ {item.flavor?.promotional?.average} {item.flavor?.special?.average}</div>
-                  <div className="check-subtitle">6 Fatias e até 3 sabores </div>
-                </div>
-                <p>
-                  <input type="radio" id="medium-size" name="size" />
-                  <label htmlFor="medium-size"></label>
-                </p>
-              </div>
-
-              <div className="item-info size-body-box">
-                <div className="title-subtitle-box">
-                  <div className="check-title">Grande</div>
-                  <div className="price">R$ {item.flavor?.promotional?.big} {item.flavor?.special?.big}</div>
-                  <div className="check-subtitle">8 Fatias e até 3 sabores </div>
-                </div>
-                <p>
-                  <input type="radio" id="large-size" name="size" />
-                  <label htmlFor="large-size"></label>
-                </p>
-              </div>
-
-              <div className="item-info size-body-box" >
-                <div className="title-subtitle-box">
-                  <div className="check-title">Família</div>
-                  <div className="price">R$ {item.flavor?.promotional?.family} {item.flavor?.special?.family}</div>
-                  <div className="check-subtitle">12 Fatias e até 4 sabores </div>
-                </div>
-                <p>
-                  <input type="radio" id="family-sized" name="size" />
-                  <label htmlFor="family-sized"></label>
-                </p>
-              </div>
-
+              {
+                categories.map((item: any, index: number) => {
+                  return (
+                    <div className="item-info size-body-box" key={index}>
+                      <div className="title-subtitle-box">
+                        <div className="check-title">{item.description}</div>
+                        <div className="price">
+                          {
+                            currencyToString(item.normal)
+                          }
+                        </div>
+                        <div className="check-subtitle">{item.size} Fatias e até {item.tastes} sabores </div>
+                      </div>
+                      <p>
+                        <input type="radio" id={item.type} name="size" />
+                        <label htmlFor={item.type}></label>
+                      </p>
+                    </div>
+                  )
+                })
+              }
             </div>
           </div>
         </details>
@@ -111,61 +83,26 @@ export const Item = () => {
           </summary>
           <div className="item-body">
             <div className="content">
-              <div className="item-info size-body-box">
-                <div className="title-subtitle-box">
-                  <div className="check-title">Catupiry</div>
-                  <div className="price">
-                    + R$ 5,00
-                  </div>
-                </div>
-                <p className="border-input">
-                  <input type="radio" id="catupiry" name="border" />
-                  <label htmlFor="catupiry"></label>
-                </p>
-              </div>
-
-              <div className="item-info size-body-box" >
-                <div className="title-subtitle-box">
-                  <div className="check-title">Cheddar</div>
-                  <div className="price">+ R$ 5,00</div>
-                </div>
-                <p className="border-input">
-                  <input type="radio" id="cheddar" name="border" checked />
-                  <label htmlFor="cheddar"></label>
-                </p>
-              </div>
-
-              <div className="item-info size-body-box">
-                <div className="title-subtitle-box">
-                  <div className="check-title">Mussarela</div>
-                  <div className="price">+ R$ 5,00</div>
-                </div>
-                <p className="border-input">
-                  <input type="radio" id="mussarela" name="border" checked />
-                  <label htmlFor="mussarela"></label>
-                </p>
-              </div>
-
-              <div className="item-info size-body-box" >
-                <div className="title-subtitle-box">
-                  <div className="check-title">Leite Ninho</div>
-                  <div className="price">+ R$ 5,00</div>
-                </div>
-                <p className="border-input">
-                  <input type="radio" id="leite-ninho" name="border" checked />
-                  <label htmlFor="leite-ninho"></label>
-                </p>
-              </div>
-
-              <div className="item-info size-body-box" >
-                <div className="title-subtitle-box">
-                  <div className="check-title">Sem Borda</div>
-                </div>
-                <p className="border-input">
-                  <input type="radio" id="no" name="border" checked />
-                  <label htmlFor="no"></label>
-                </p>
-              </div>
+              {
+                border.map((item, index) => {
+                  return (
+                    <div className="item-info size-body-box" key={index}>
+                      <div className="title-subtitle-box">
+                        <div className="check-title">{item.description}</div>
+                        <div className="price">
+                          {
+                            currencyToString(item.price)
+                          }
+                        </div>
+                      </div>
+                      <p className="border-input">
+                        <input type="radio" id={item.key} name="border" />
+                        <label htmlFor={item.key}></label>
+                      </p>
+                    </div>
+                  )
+                })
+              }
 
             </div>
           </div>
