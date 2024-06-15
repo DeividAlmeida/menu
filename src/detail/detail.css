@@ -171,7 +171,7 @@ picture > img {
 }
 
 .next-button-box {
-  height: 50px;
+  height: 60px;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -180,18 +180,17 @@ picture > img {
   background-color: rgba(255, 255, 255, 0.952);
   box-shadow: 0 -1px 3px 0.1px rgb(165, 165, 165);
   z-index: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .next-button {
   text-decoration: none;
   color: white;
-  padding: 10px;
-  background-color: rgb(48, 138, 255);
+  margin: 10px;
+  background-color: #00c700;
   text-wrap: nowrap ;
   border-radius: 5px;
-  position: fixed;
-  left: 15px;
-  bottom: 6px;
-  right: 15px;
+  width: 400px;
 }
 

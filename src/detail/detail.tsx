@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { allItens, border, categories, CartContext } from "../App";
 import "./detail.css";
 import { currencyToString } from "../utils/index";
 type CartContextType = {
-  cart: IItem[];
-  addOrder: React.Dispatch<React.SetStateAction<IItem[] | []>>;
+  cart: any[];
+  addOrder: React.Dispatch<React.SetStateAction<any[] | []>>;
 };
 interface IItem {
   title: string;
@@ -15,14 +15,49 @@ interface IItem {
   flavor?: any;
 }
 export const Item = () => {
+  const [tastesState, setTastesState] = useState(false);
+  const [tastes, setTastes] = useState<number[]>([]);
+  const [selectedBorder, setSelectedBorder] = useState<string>();
+  const [borderState, setBorderState] = useState(false);
   let { id } = useParams();
   let index = id ? parseInt(id) : 0;
   const item = categories[index];
+ 
+  useEffect(() => {
+    setTastesState(item.tastes <= tastes.length) 
+  }, [item.tastes, tastes]);
+  
+  useEffect(() => {
+    console.log(selectedBorder);
+    setBorderState(a=> !a); 
+  }, [selectedBorder]);
+
   const { cart , addOrder } = useContext(CartContext) as CartContextType;
   const addCart = () =>  {
-    addOrder([allItens[index]])
-    console.log(cart);
+    addOrder([{
+      type: item.id,
+      tastes,
+      border,
+    }])
   }
+
+  function setCart(params: any, row: { id: number; }) {
+    if(params) {
+      setTastes(a=> [...a, row.id]);
+    } else {
+      setTastes(a => [ ...a.filter((item) => item !== row.id)]);
+    }
+  }
+
+  function addBorder(params:any, row: { key: string; }) {
+    if(params) {
+      setSelectedBorder(row.key);
+      setBorderState(true);
+    } else {
+      setSelectedBorder(undefined);
+    }
+  }
+
   const [filteredItens, setFilteredItens] = useState(allItens);
   function searchItem(event: React.ChangeEvent<HTMLInputElement>) {
     const query = event.target.value;
@@ -69,7 +104,6 @@ export const Item = () => {
               {
                 filteredItens.map((item: any, index: number) => {
                   const typeKey = index.toString();
-                  console.log(item);
                   return (
                     <div className="item-info size-body-box" key={index}>
                       <div className="title-subtitle-box">
@@ -82,7 +116,7 @@ export const Item = () => {
                           </div>
                       </div>
                       <p>
-                        <input type="radio" id={typeKey}   />
+                        <input disabled={tastesState && !tastes.includes(item.id)} type="checkbox" id={typeKey}  onChange={(e)=> setCart(e.target.checked, item) }/>
                         <label htmlFor={typeKey}></label>
                       </p>
                     </div>
@@ -112,7 +146,7 @@ export const Item = () => {
                         </div>
                       </div>
                       <p className="border-input">
-                        <input type="radio" id={"b"+item.key} name="border" />
+                        <input disabled={!!selectedBorder && selectedBorder !== item.key } type="checkbox" id={"b"+item.key} name="border" onChange={(e)=> addBorder(e.target.checked, item) }/>
                         <label htmlFor={"b"+item.key}></label>
                       </p>
                     </div>
@@ -125,21 +159,15 @@ export const Item = () => {
         </details>
       </div>
 
-        <footer style={{height: "50px", backgroundColor: "#fff"}}></footer>
+      <footer style={{height: "75px", backgroundColor: "#fff"}}></footer>
       <div className="next-button-box">
-        <a 
+        <button 
           className="next-button" 
           onClick={()=>addCart()}
         >
           Adicionar ao carrinho
-        </a>
+        </button>
       </div>
     </>
   )
 }
-
-/**
- * <div className="icon-title-box">
-              <div className="select-on">Selecionado</div>
-            </div>
- */
