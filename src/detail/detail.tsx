@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { allItens, border, categories, CartContext } from "../App";
 import "./detail.css";
 import { currencyToString } from "../utils/index";
@@ -17,22 +17,31 @@ interface IItem {
 export const Item = () => {
   let { id } = useParams();
   let index = id ? parseInt(id) : 0;
-  const item = allItens[index];
+  const item = categories[index];
   const { cart , addOrder } = useContext(CartContext) as CartContextType;
   const addCart = () =>  {
     addOrder([allItens[index]])
     console.log(cart);
   }
+  const [filteredItens, setFilteredItens] = useState(allItens);
+  function searchItem(event: React.ChangeEvent<HTMLInputElement>) {
+    const query = event.target.value;
+    setFilteredItens(
+      allItens.filter(item => {
+        return item.title.toLowerCase().includes(query.toLowerCase()) || item.description.toLowerCase().includes(query.toLowerCase());
+      })
+    );
+  }
   return (
     <>
-      <div className="control">
+      <picture>
+      <div className="control" >
         <div className="back-icon">
           <a href="/">
             <i className="fa-solid fa-arrow-left" />
           </a>
         </div>
       </div>
-      <picture>
         <img src={item.image} alt="" />
       </picture>
       <div className="item-container">
@@ -41,32 +50,40 @@ export const Item = () => {
         </div>
 
         <div className="item-description">
-          <p>Igredientes: {item.details?.igredients}</p>
+          <p>{item.description}</p>
         </div>
       </div>
 
+      <div className="options">
         <details className="item-size-box" open >
           <summary className="item-header item-size-header">
-            <h2 className="item-name item-size-name">Tamanho</h2>
+            <h2 className="item-size-name item-type-info">Obrigatório</h2>
+            <h2 className="item-size-name" style={{width: "33%"}}>Sabores</h2>
+            <br />
           </summary>
+          <div className="filter">
+            <input type="text" placeholder="Encontre o sabor" onChange={searchItem} className="search" />
+          </div>
           <div className="item-body">
             <div className="content">
               {
-                categories.map((item: any, index: number) => {
+                filteredItens.map((item: any, index: number) => {
+                  const typeKey = index.toString();
+                  console.log(item);
                   return (
                     <div className="item-info size-body-box" key={index}>
                       <div className="title-subtitle-box">
-                        <div className="check-title">{item.description}</div>
-                        <div className="price">
-                          {
-                            currencyToString(item.normal)
-                          }
-                        </div>
-                        <div className="check-subtitle">{item.size} Fatias e até {item.tastes} sabores </div>
+                        <div className="check-title" style={{color: "black"}}>{item.title}</div>
+                        <div className="check-subtitle">{item.description} </div>
+                          <div className="price" style={{color: "red"}}>
+                            + {
+                              currencyToString(item.fee)
+                            }
+                          </div>
                       </div>
                       <p>
-                        <input type="radio" id={item.type} name="size" />
-                        <label htmlFor={item.type}></label>
+                        <input type="radio" id={typeKey}   />
+                        <label htmlFor={typeKey}></label>
                       </p>
                     </div>
                   )
@@ -75,11 +92,10 @@ export const Item = () => {
             </div>
           </div>
         </details>
-
-
         <details className="item-size-box" >
           <summary className="item-header item-size-header">
-            <h2 className="item-name item-size-name">Borda</h2>
+            <h2 className="item-type-info">Opcional</h2>
+            <h2 className="item-name item-size-name" style={{width: "33%"}}>Borda</h2>
           </summary>
           <div className="item-body">
             <div className="content">
@@ -88,16 +104,16 @@ export const Item = () => {
                   return (
                     <div className="item-info size-body-box" key={index}>
                       <div className="title-subtitle-box">
-                        <div className="check-title">{item.description}</div>
-                        <div className="price">
-                          {
+                        <div className="check-title" style={{color: "black"}}>{item.description}</div>
+                        <div className="price" style={{color: "red"}}>
+                          + {
                             currencyToString(item.price)
                           }
                         </div>
                       </div>
                       <p className="border-input">
-                        <input type="radio" id={item.key} name="border" />
-                        <label htmlFor={item.key}></label>
+                        <input type="radio" id={"b"+item.key} name="border" />
+                        <label htmlFor={"b"+item.key}></label>
                       </p>
                     </div>
                   )
@@ -107,6 +123,8 @@ export const Item = () => {
             </div>
           </div>
         </details>
+      </div>
+
         <footer style={{height: "50px", backgroundColor: "#fff"}}></footer>
       <div className="next-button-box">
         <a 

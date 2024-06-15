@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
-import { allItens, CartContext } from "../App";
+import { allItens, categories, CartContext } from "../App";
 import './home.css';
+import { currencyToString } from '../utils';
 export const Home = () => {
 
   const [filteredItens, setFilteredItens] = useState(allItens);
@@ -22,12 +23,13 @@ export const Home = () => {
       </header>
       <div className="menu">
         <div className="card-container">
-          {filteredItens.map((item: any, index: number) => (            
+          {categories.map((item: any, index: number) => (            
             <a className="card" key={index} href={`/${index}`}>
               <img src={item.image} alt={item.title} />
               <div className="card-content">
                 <h4>{item.title}</h4>
-                <p>{item.description}</p>
+                <p >{item.description}</p>
+                <p className="price"> {currencyToString(item.price)}</p>
               </div>
             </a>
           ))}

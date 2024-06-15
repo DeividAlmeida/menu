@@ -10,6 +10,7 @@ interface IItem {
   title: string;
   image: string;
   description: string;
+  fee: number;
   details?: any;
 }
 
@@ -22,7 +23,8 @@ export const allItens: IItem[] = [
       pizza_dough: "515gr",
       igredients: "30gr de Muçarela, 40gr de Calabresa, 2 Azeitonas, Orégano",
       total_weight: "587"
-    }
+    },
+    fee: 5.00,
   },
   {
     title: "Luzense",
@@ -32,11 +34,13 @@ export const allItens: IItem[] = [
       pizza_dough: "515gr",
       igredients: "30gr de Muçarela, 35gr de Carne, 5gr de Banana-da-Terra, 2 Azeitonas, Orégano",
       total_weight: "587"
-    }
+    },
+    fee: 0.00,
   },
   {
     title: "Gourmet Burger",
     description: "Calabresa Acebolada",
+    fee: 0.00,
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       pizza_dough: "515gr",
@@ -52,11 +56,13 @@ export const allItens: IItem[] = [
       pizza_dough: "515gr",
       igredients: "30gr de Muçarela, 40gr de Calabresa, 2 Azeitonas, Orégano",
       total_weight: "587"
-    }
+    },
+    fee: 5.00,
   },
   {
     title: "Gourmet Burger",
     description: "Calabresa Acebolada",
+    fee: 0.00,
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       pizza_dough: "515gr",
@@ -72,11 +78,13 @@ export const allItens: IItem[] = [
       pizza_dough: "515gr",
       igredients: "30gr de Muçarela, 40gr de Calabresa, 2 Azeitonas, Orégano",
       total_weight: "587"
-    }
+    },
+    fee: 5.00,
   },
   {
     title: "Gourmet Burger",
     description: "Calabresa Acebolada",
+    fee: 0.00,
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       pizza_dough: "515gr",
@@ -87,6 +95,7 @@ export const allItens: IItem[] = [
   {
     title: "Gourmet Burger",
     description: "Calabresa Acebolada",
+    fee: 5.00,
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       pizza_dough: "515gr",
@@ -97,6 +106,7 @@ export const allItens: IItem[] = [
   {
     title: "Gourmet Burger",
     description: "Calabresa Acebolada",
+    fee: 5.00,
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       pizza_dough: "515gr",
@@ -107,6 +117,7 @@ export const allItens: IItem[] = [
   {
     title: "Gourmet Burger",
     description: "Calabresa Acebolada",
+    fee: 5.00,
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       pizza_dough: "515gr",
@@ -117,6 +128,7 @@ export const allItens: IItem[] = [
   {
     title: "Gourmet Burger",
     description: "Calabresa Acebolada",
+    fee: 5.00,
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       pizza_dough: "515gr",
@@ -127,6 +139,7 @@ export const allItens: IItem[] = [
   {
     title: "Luzense",
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
+    fee: 5.00,
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       pizza_dough: "515gr",
@@ -137,6 +150,7 @@ export const allItens: IItem[] = [
   {
     title: "Luzense",
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
+    fee: 5.00,
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       pizza_dough: "515gr",
@@ -150,35 +164,39 @@ export const allItens: IItem[] = [
 export const categories = [
   {
     type: "small_size",
-    description: "Pequena",
+    title: "Pizza Pequena",
+    description: "4 fatias e uma opção de sabor",
+    image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     tastes: 1,
     size: 4,
-    normal: 15.00,
-    promocional: 10.00
+    price: 15.00,
   },
   {
     type: "medium_size",
-    description: "Média",
+    title: "Pizza Média",
+    description: "6 fatias e até duas opções de sabores",
+    image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     tastes: 2,
     size: 6,
-    normal: 20.00,
-    promocional: 10.00
+    price: 20.00,
   },
   {
     type: "large_size",
-    description: "Grande",
+    title: "Pizza Grande",
+    description: "8 fatias e até três opções de sabores",
+    image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     tastes: 2,
     size: 8,
-    normal: 20.00,
-    promocional: 10.00
+    price: 20.00,
   },
   {
     type: "family_size",
+    title: "Pizza Família",
+    description: "12 fatias e até quatro opções de sabores",
+    image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     tastes: 3,
-    description: "Família",
     size:12,
-    normal: 20.00,
-    promocional: 10.00
+    price: 20.00,
   }
 ]
 
@@ -207,11 +225,6 @@ export const border = [
     key: "4",
     description: "Doce de leite",
     price: 5.00
-  },
-  {
-    key: "4",
-    description: "Sem borda", 
-    price: 0.00
   }
 ];
 
@@ -239,9 +252,9 @@ function App() {
                 <Route path="cart" element={<Cart />} />
                 <Route path='my-order' element={<Order />} />
               </Routes>
+              <Nav />
             </div>
           </section>
-          <Nav />
         </main>
       </CartContext.Provider>
     </Router>

@@ -21,7 +21,6 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 1rem;
 }
 
 .card-container {
@@ -77,6 +76,11 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  margin:  5px 0;
+}
+
+.card-container h4 {
+  margin: 10px 0;
 }
 
 .home {

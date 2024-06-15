@@ -9,10 +9,10 @@ export const Nav = () => {
         Início
       </a>
 
-      <a className='nav-btn' href="/my-order">
+      {/* <a className='nav-btn' href="/my-order">
         <i className="fa-solid fa-clipboard-list"></i>
         Pedidos
-      </a>
+      </a> */}
 
       <a className='nav-btn' href="/cart">
         <i className="fa-solid fa-cart-shopping"></i>
