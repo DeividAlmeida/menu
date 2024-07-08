@@ -6,16 +6,17 @@ import { Item } from "./detail/detail";
 import { Cart } from "./cart/cart";
 import { Order } from "./myOrder/myOrder"
 import { Nav } from "./nav/nav"
+import { Calculator } from './utils/calculator';
 interface IItem {
   id: number;
   title: string;
   image: string;
   description: string;
-  fee: number;
+  price: number;
   details?: any;
 }
 
-export const allItens: IItem[] = [
+export const allItems: IItem[] = [
   {
     id: 0,
     title: "Gourmet Burger",
@@ -26,7 +27,7 @@ export const allItens: IItem[] = [
       igredients: "30gr de Muçarela, 40gr de Calabresa, 2 Azeitonas, Orégano",
       total_weight: "587"
     },
-    fee: 5.00,
+    price: 5.00,
   },
   {
     id: 1,
@@ -38,13 +39,13 @@ export const allItens: IItem[] = [
       igredients: "30gr de Muçarela, 35gr de Carne, 5gr de Banana-da-Terra, 2 Azeitonas, Orégano",
       total_weight: "587"
     },
-    fee: 0.00,
+    price: 0.00,
   },
   {
     id: 2,
     title: "Gourmet Burger",
     description: "Calabresa Acebolada",
-    fee: 0.00,
+    price: 0.00,
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       pizza_dough: "515gr",
@@ -62,13 +63,13 @@ export const allItens: IItem[] = [
       igredients: "30gr de Muçarela, 40gr de Calabresa, 2 Azeitonas, Orégano",
       total_weight: "587"
     },
-    fee: 5.00,
+    price: 5.00,
   },
   {
     id: 4,
     title: "Gourmet Burger",
     description: "Calabresa Acebolada",
-    fee: 0.00,
+    price: 0.00,
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       pizza_dough: "515gr",
@@ -86,13 +87,13 @@ export const allItens: IItem[] = [
       igredients: "30gr de Muçarela, 40gr de Calabresa, 2 Azeitonas, Orégano",
       total_weight: "587"
     },
-    fee: 5.00,
+    price: 5.00,
   },
   {
     id: 6,
     title: "Gourmet Burger",
     description: "Calabresa Acebolada",
-    fee: 0.00,
+    price: 0.00,
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       pizza_dough: "515gr",
@@ -104,7 +105,7 @@ export const allItens: IItem[] = [
     id: 7,
     title: "Gourmet Burger",
     description: "Calabresa Acebolada",
-    fee: 5.00,
+    price: 5.00,
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       pizza_dough: "515gr",
@@ -116,7 +117,7 @@ export const allItens: IItem[] = [
     id: 8,
     title: "Gourmet Burger",
     description: "Calabresa Acebolada",
-    fee: 5.00,
+    price: 5.00,
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       pizza_dough: "515gr",
@@ -128,7 +129,7 @@ export const allItens: IItem[] = [
     id: 9,
     title: "Gourmet Burger",
     description: "Calabresa Acebolada",
-    fee: 5.00,
+    price: 5.00,
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       pizza_dough: "515gr",
@@ -140,7 +141,7 @@ export const allItens: IItem[] = [
     id: 10,
     title: "Gourmet Burger",
     description: "Calabresa Acebolada",
-    fee: 5.00,
+    price: 5.00,
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       pizza_dough: "515gr",
@@ -152,7 +153,7 @@ export const allItens: IItem[] = [
     id: 11,
     title: "Luzense",
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
-    fee: 5.00,
+    price: 5.00,
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       pizza_dough: "515gr",
@@ -164,7 +165,7 @@ export const allItens: IItem[] = [
     id: 12,
     title: "Luzense",
     description: "Indulge in a classNameic Italian pasta dish, perfect for any occasion.",
-    fee: 5.00,
+    price: 5.00,
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     details: {
       pizza_dough: "515gr",
@@ -220,27 +221,27 @@ export const categories = [
 
 export const border = [
   {
-    key: "0",
+    key: 0,
     description: "Cheddar", 
     price: 5.00
   },
   {
-    key: "1",
+    key: 1,
     description: "Catupiry",
     price: 5.00
   },
   {
-    key: "2",
+    key: 2,
     description: "Mussarela",
     price: 5.00
   },
   {
-    key: "3",
+    key: 3,
     description: "Brigadeiro",
     price: 5.00
   },
   {
-    key: "4",
+    key: 4,
     description: "Doce de leite",
     price: 5.00
   }
@@ -248,6 +249,7 @@ export const border = [
 
 type CartContextType = {
   cart: any[];
+  total: number;
   addOrder: React.Dispatch<React.SetStateAction<IItem[] | [
 
   ]>>;
@@ -255,12 +257,15 @@ type CartContextType = {
 export const CartContext = createContext<CartContextType | any[]>([]);
 function App() {
   const [cart, setCart] = useState<any[]>([]);
+  const [total, setTotal] = useState<number>(0);
     const addOrder = (cart: any) => {
       setCart(cart)
+      const calc = new Calculator(cart).total;
+      setTotal(calc);
     }
   return (
     <Router>
-      <CartContext.Provider value={{ cart, addOrder }}>
+      <CartContext.Provider value={{ cart, total, addOrder }}>
         <main>
           <section>
             <div className="container">

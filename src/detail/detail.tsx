@@ -1,23 +1,15 @@
 import { useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from 'react';
-import { allItens, border, categories, CartContext } from "../App";
+import { allItems, border, categories, CartContext } from "../App";
 import "./detail.css";
 import { currencyToString } from "../utils/index";
-type CartContextType = {
-  cart: any[];
-  addOrder: React.Dispatch<React.SetStateAction<any[] | []>>;
-};
-interface IItem {
-  title: string;
-  image: string;
-  description: string;
-  details?: any;
-  flavor?: any;
-}
+import { Calculator } from "../utils/calculator";
+import { Cart, CartContextType } from "../types/cart";
+
 export const Item = () => {
   const [tastesState, setTastesState] = useState(false);
   const [tastes, setTastes] = useState<number[]>([]);
-  const [selectedBorder, setSelectedBorder] = useState<string>();
+  const [selectedBorder, setSelectedBorder] = useState<number>();
   const [borderState, setBorderState] = useState(false);
   let { id } = useParams();
   let index = id ? parseInt(id) : 0;
@@ -27,17 +19,14 @@ export const Item = () => {
     setTastesState(item.tastes <= tastes.length) 
   }, [item.tastes, tastes]);
   
-  useEffect(() => {
-    console.log(selectedBorder);
-    setBorderState(a=> !a); 
-  }, [selectedBorder]);
-
-  const { cart , addOrder } = useContext(CartContext) as CartContextType;
+  const { cart , total, addOrder } = useContext(CartContext) as CartContextType;
   const addCart = () =>  {
-    addOrder([{
+    addOrder([
+      ...cart,
+      {
       type: item.id,
       tastes,
-      border,
+      border: selectedBorder,
     }])
   }
 
@@ -49,7 +38,7 @@ export const Item = () => {
     }
   }
 
-  function addBorder(params:any, row: { key: string; }) {
+  function addBorder(params:any, row: { key: number; }) {
     if(params) {
       setSelectedBorder(row.key);
       setBorderState(true);
@@ -58,11 +47,11 @@ export const Item = () => {
     }
   }
 
-  const [filteredItens, setFilteredItens] = useState(allItens);
+  const [filteredItems, setFilteredItems] = useState(allItems);
   function searchItem(event: React.ChangeEvent<HTMLInputElement>) {
     const query = event.target.value;
-    setFilteredItens(
-      allItens.filter(item => {
+    setFilteredItems(
+      allItems.filter(item => {
         return item.title.toLowerCase().includes(query.toLowerCase()) || item.description.toLowerCase().includes(query.toLowerCase());
       })
     );
@@ -102,7 +91,7 @@ export const Item = () => {
           <div className="item-body">
             <div className="content">
               {
-                filteredItens.map((item: any, index: number) => {
+                filteredItems.map((item: any, index: number) => {
                   const typeKey = index.toString();
                   return (
                     <div className="item-info size-body-box" key={index}>
@@ -111,7 +100,7 @@ export const Item = () => {
                         <div className="check-subtitle">{item.description} </div>
                           <div className="price" style={{color: "red"}}>
                             + {
-                              currencyToString(item.fee)
+                              currencyToString(item.price)
                             }
                           </div>
                       </div>
@@ -146,7 +135,7 @@ export const Item = () => {
                         </div>
                       </div>
                       <p className="border-input">
-                        <input disabled={!!selectedBorder && selectedBorder !== item.key } type="checkbox" id={"b"+item.key} name="border" onChange={(e)=> addBorder(e.target.checked, item) }/>
+                        <input disabled={selectedBorder !== undefined && selectedBorder !== item.key } type="checkbox" id={"b"+item.key} name="border" onChange={(e)=> addBorder(e.target.checked, item) }/>
                         <label htmlFor={"b"+item.key}></label>
                       </p>
                     </div>
@@ -165,7 +154,8 @@ export const Item = () => {
           className="next-button" 
           onClick={()=>addCart()}
         >
-          Adicionar ao carrinho
+          Adicionar ao carrinho 
+          { " " + currencyToString(total??0)}
         </button>
       </div>
     </>

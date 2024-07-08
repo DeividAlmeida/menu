@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import { allItens, categories, CartContext } from "../App";
+import { allItems, categories, CartContext } from "../App";
 import './home.css';
 import { currencyToString } from '../utils';
 import { Nav } from '../nav/nav';
