@@ -258,28 +258,28 @@ export const CartContext = createContext<CartContextType | any[]>([]);
 function App() {
   const [cart, setCart] = useState<any[]>([]);
   const [total, setTotal] = useState<number>(0);
-    const addOrder = (cart: any) => {
+    const addOrder = (cart: any) => {     
       setCart(cart)
       const calc = new Calculator(cart).total;
       setTotal(calc);
     }
   return (
-    <Router>
-      <CartContext.Provider value={{ cart, total, addOrder }}>
-        <main>
-          <section>
-            <div className="container">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/:id" element={<Item />} />
-                <Route path="cart" element={<Cart />} />
-                <Route path='my-order' element={<Order />} />
-              </Routes>
-            </div>
-          </section>
-        </main>
-      </CartContext.Provider>
-    </Router>
+    <CartContext.Provider value={{ cart, total, addOrder }}>
+      <Router>
+          <main>
+            <section>
+              <div className="container">
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/:id" element={<Item />} />
+                  <Route path="cart" element={<Cart />} />
+                  <Route path='my-order' element={<Order />} />
+                </Routes>
+              </div>
+            </section>
+          </main>
+      </Router>
+    </CartContext.Provider>
   );
 }
 export default App;

@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from 'react';
 import { allItems, border, categories, CartContext } from "../App";
 import "./detail.css";
@@ -7,10 +7,10 @@ import { Calculator } from "../utils/calculator";
 import { Cart, CartContextType } from "../types/cart";
 
 export const Item = () => {
+  const  [key, setKey] = useState(0);
   const [tastesState, setTastesState] = useState(false);
   const [tastes, setTastes] = useState<number[]>([]);
   const [selectedBorder, setSelectedBorder] = useState<number>();
-  const [borderState, setBorderState] = useState(false);
   let { id } = useParams();
   let index = id ? parseInt(id) : 0;
   const item = categories[index];
@@ -21,13 +21,31 @@ export const Item = () => {
   
   const { cart , total, addOrder } = useContext(CartContext) as CartContextType;
   const addCart = () =>  {
+    
     addOrder([
-      ...cart,
+      ...cart??[],
       {
       type: item.id,
       tastes,
       border: selectedBorder,
     }])
+    setKey((prev)=> prev + 1)
+    setTastesState(false);
+    setTastes([]);
+    setSelectedBorder(undefined);
+
+  }
+
+  const subTotal = () => {
+    if (tastes.length > 0 ) {
+      return new Calculator([
+        {
+          type: item.id,
+          tastes,
+          border: selectedBorder,
+        }
+      ]).total + total;
+    } else return total;
   }
 
   function setCart(params: any, row: { id: number; }) {
@@ -39,9 +57,10 @@ export const Item = () => {
   }
 
   function addBorder(params:any, row: { key: number; }) {
+    console.log(params, row);
+    
     if(params) {
       setSelectedBorder(row.key);
-      setBorderState(true);
     } else {
       setSelectedBorder(undefined);
     }
@@ -57,13 +76,13 @@ export const Item = () => {
     );
   }
   return (
-    <>
+    <div key={key}>
       <picture>
       <div className="control" >
         <div className="back-icon">
-          <a href="/">
+          <Link to="/">
             <i className="fa-solid fa-arrow-left" />
-          </a>
+          </Link>
         </div>
       </div>
         <img src={item.image} alt="" />
@@ -153,11 +172,19 @@ export const Item = () => {
         <button 
           className="next-button" 
           onClick={()=>addCart()}
+          disabled={tastes.length === 0}
         >
-          Adicionar ao carrinho 
-          { " " + currencyToString(total??0)}
+          Adicionar ao carrinho
+          <b>{ " " + currencyToString(subTotal())}</b>
         </button>
+        <Link 
+          to="/cart"
+          className="order-button" 
+        >
+          <center>Ver Pedido <i className="fa fa-shopping-cart" aria-hidden="true"></i></center> 
+        </Link>
+        
       </div>
-    </>
+    </div>
   )
 }

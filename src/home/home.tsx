@@ -3,6 +3,7 @@ import { allItems, categories, CartContext } from "../App";
 import './home.css';
 import { currencyToString } from '../utils';
 import { Nav } from '../nav/nav';
+import { Link } from 'react-router-dom';
 export const Home = () => {
   return (
     <>
@@ -16,14 +17,14 @@ export const Home = () => {
         <div className="menu">
           <div className="card-container">
             {categories.map((item: any, index: number) => (            
-              <a className="card" key={index} href={`/${index}`}>
+              <Link className="card" key={index} to={`/${index}`}>
                 <img src={item.image} alt={item.title} />
                 <div className="card-content">
                   <h4>{item.title}</h4>
                   <p >{item.description}</p>
                   <p className="price"> {currencyToString(item.price)}</p>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

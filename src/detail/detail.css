@@ -193,4 +193,32 @@ picture > img {
   border-radius: 5px;
   width: 400px;
 }
+.next-button > h4 {
+  margin: 0;
+}
 
+.order-button {
+  text-decoration: none;
+  color: #666;
+  margin: 10px;
+  background-color: #f5f5f5;
+  text-wrap: nowrap ;
+  border-radius: 5px;
+  width: 400px;
+  font-weight: bold;
+  font-size: 12px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  border: solid #dedede 1px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.order-button > center {
+  font-weight: bold;
+  display: block;
+  font-size: 14px;
+  line-height: 18px;
+}

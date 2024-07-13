@@ -17,9 +17,9 @@ export class Calculator  {
 
   private calcTotal() {
     this.total = this.cart.reduce((acc, item) => {
-      const base_price =  categories[item.type].price;
-      const taste_price =  this.calcTastePrice(item.tastes);
-      const border_price = item.border ? border[item.border].price : 0;
+      const base_price = categories[item.type].price;
+      const taste_price = this.calcTastePrice(item.tastes);
+      const border_price = item.border !== undefined ? border[item.border].price : 0;
       return acc + (base_price + taste_price + border_price);
     }, 0);
     return this.total;

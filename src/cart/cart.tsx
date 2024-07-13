@@ -1,61 +1,75 @@
+import { useContext } from "react";
+import { allItems, border, categories, CartContext } from "../App";
 import "./cart.css";
+import { CartContextType } from "../types/cart";
+import { currencyToString } from "../utils";
+import { Link } from "react-router-dom";
 export const Cart = () => {
+  const { cart , total, addOrder } = useContext(CartContext) as CartContextType;
   return (
     <>
       <div className="back-box">
-        <a href="/" className="back">
+        <Link to="/" className="back">
           <i className="fa-solid fa-arrow-left" />
-        </a>
+        </Link>
       </div>
       <h1 className="cart-title">Seu pedido</h1>
-      <details className="cart-box" open>
-        <summary className="item-header">
-            <button className="danger" >
-              <i className="fa-solid fa-trash"></i>
-            </button>
-            <h2 className="item-name">Pizza Media</h2>
-        </summary>
-        <div className="item-body">
-          <div className="content">
-            <div className="item-info">
-              <p className="item-taste">Pepperoni Pizza</p>
-              <p className="item-remove"><i className="fa-solid fa-xmark"></i></p>
-            </div>
-            <div className="item-info">
-              <p className="item-taste">Pepperoni Pizza</p>
-              <p className="item-remove">
-                <i className="fa-solid fa-xmark"></i>
+     {
+      cart.map((item, index) => {
+        return (
+          <>
+            <details className="cart-box" open key={index}>
+              <summary className="item-header">
+                  <button className="danger" >
+                    <i className="fa-solid fa-trash"></i>
+                  </button>
+                  <h2 className="item-name">{categories[item.type].title}</h2>
+              </summary>
+              <div className="item-body">
+                <div className="content">
+                  {
+                    item.tastes.map((taste, taste_index) => {
+                      return (
+                        <div className="item-info" key={`t-${taste_index}`}>
+                          <p className="item-taste">{allItems[taste].title}</p>
+                          <p className="item-remove">
+                            <i className="fa-solid fa-xmark"></i>
+                          </p>
+                        </div>
+                      )
+                    })
+                  }              
+                </div>
+              </div>
+              {
+                item.border ? 
+                <div className="item-footer" key={`b-${index}`}>
+                  <div className="content">
+                    <div className="item-info">
+                      <p className="item-complement">
+                        {border[item.border].description}
+                        <i className="item-complement-price"> - {currencyToString(border[item.border].price)}</i>
+                      </p>
+                        <p className="item-remove">
+                          <i className="fa-solid fa-xmark" />
+                        </p>
+                    </div>
+                  </div>
+                </div>: null
+              }
+            </details>
+            <div className="sub-total">
+              <p className="sub-total-lable">
+                Sub-total
+              </p>
+              <p className="sub-total-price">
+                {currencyToString(categories[item.type].price + item.tastes.reduce((acc, taste) => acc + allItems[taste].price, 0) + (item.border !== undefined ? border[item.border].price : 0))}
               </p>
             </div>
-            <div className="item-info">
-              <p className="item-taste">Pepperoni Pizza</p>
-              <p className="item-remove"><i className="fa-solid fa-xmark"></i></p>
-            </div>
-            
-          </div>
-        </div>
-        <div className="item-footer">
-          <div className="content">
-            <div className="item-info">
-              <p className="item-complement">
-                Borda de cheddar
-                <i className="item-complement-price"> - R$ 5,00</i>
-              </p>
-                <p className="item-remove">
-                  <i className="fa-solid fa-xmark" />
-                </p>
-            </div>
-          </div>
-        </div>
-      </details>
-      <div className="sub-total">
-        <p className="sub-total-lable">
-          Sub-total
-        </p>
-        <p className="sub-total-price">
-          R$ 30,00
-        </p>
-      </div>
+          </>
+        )
+      })
+     } 
       <h1 className="cart-title">Endereço de entrega</h1>
       <div className="cart-box cart-form">
         <div className="cart-form-row">
@@ -97,7 +111,7 @@ export const Cart = () => {
       <div className="total-price">
         <div className="price-box">
           <span className="total-price-label">Sub-Total</span>
-          <strong className="total-price-value">R$ 35,00</strong>
+          <strong className="total-price-value">{currencyToString(total)}</strong>
         </div>
         <div className="price-box">
           <span className="total-price-label">Taxa de entrega</span>
