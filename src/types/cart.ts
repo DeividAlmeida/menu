@@ -2,6 +2,7 @@ export type Cart = {
   type : number;
   tastes: number[];
   border?: number;
+  sub_total: number;
 }
 
 export type CartContextType = {

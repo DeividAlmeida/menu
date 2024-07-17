@@ -7,7 +7,7 @@ import { Calculator } from "../utils/calculator";
 import { Cart, CartContextType } from "../types/cart";
 
 export const Item = () => {
-  const  [key, setKey] = useState(0);
+  const [key, setKey] = useState(0);
   const [tastesState, setTastesState] = useState(false);
   const [tastes, setTastes] = useState<number[]>([]);
   const [selectedBorder, setSelectedBorder] = useState<number>();
@@ -28,6 +28,7 @@ export const Item = () => {
       type: item.id,
       tastes,
       border: selectedBorder,
+      sub_total: subTotal()
     }])
     setKey((prev)=> prev + 1)
     setTastesState(false);
@@ -43,9 +44,10 @@ export const Item = () => {
           type: item.id,
           tastes,
           border: selectedBorder,
+          sub_total: 0
         }
-      ]).total + total;
-    } else return total;
+      ]).total;
+    } else return 0;
   }
 
   function setCart(params: any, row: { id: number; }) {
@@ -175,7 +177,7 @@ export const Item = () => {
           disabled={tastes.length === 0}
         >
           Adicionar ao carrinho
-          <b>{ " " + currencyToString(subTotal())}</b>
+          <b>{ " " + currencyToString(subTotal() + total)}</b>
         </button>
         <Link 
           to="/cart"
