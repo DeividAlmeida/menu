@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Cart, CartContextType } from "../types/cart";
 import { allItems, border, CartContext, categories } from "../App";
 import { Calculator } from "../utils/calculator";
@@ -10,10 +10,12 @@ type PropsType = {
 };
 export const ItemCart = ({ item, index }: PropsType) => {
   const { cart , addOrder } = useContext(CartContext) as CartContextType;
+  const [key , setKey] = useState(index);
   
   const removeItem = (index: number) => () => {
-    console.log(cart[index]);
-    addOrder(cart.splice(index, 1));
+    cart.splice(index, 1)
+    addOrder(cart);
+    setKey((prev) => prev + 1);
   };
 
   const removeTaste = (item_index: number, taste_index: number) => () => {
@@ -22,6 +24,7 @@ export const ItemCart = ({ item, index }: PropsType) => {
     cart[item_index]
   ]).total;
     addOrder(cart);
+    setKey((prev) => prev + 1);
   };
 
   const removeBorder = (index: number) => () => {
@@ -30,11 +33,12 @@ export const ItemCart = ({ item, index }: PropsType) => {
       cart[index]
     ]).total;
     addOrder(cart);
+    setKey((prev) => prev + 1);
   };
 
   return (
     <>
-      <details className="cart-box" open key={index}>
+      <details className="cart-box" open key={key}>
         <summary className="item-header">
             <button className="danger" onClick={removeItem(index)}>
               <i className="fa-solid fa-trash"></i>

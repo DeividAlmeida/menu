@@ -1,34 +1,13 @@
 import { useContext } from "react";
-import { allItems, border, categories, CartContext } from "../App";
+import { CartContext } from "../App";
 import "./cart.css";
 import { CartContextType } from "../types/cart";
 import { currencyToString } from "../utils";
 import { Link } from "react-router-dom";
-import { Calculator } from "../utils/calculator";
-import { Item } from "../detail/detail";
 import { ItemCart } from "./item_cart";
 export const Cart = () => {
-  const { cart , total, addOrder } = useContext(CartContext) as CartContextType;
+  const { cart , total } = useContext(CartContext) as CartContextType;
   
-  const removeItem = (index: number) => () => {
-    addOrder(cart.splice(index, 1));
-  };
-
-  const removeTaste = (item_index: number, taste_index: number) => () => {
-   cart[item_index].tastes.splice(taste_index, 1);
-   cart[item_index].sub_total = new Calculator([
-    cart[item_index]
-  ]).total;
-    addOrder(cart);
-  };
-
-  const removeBorder = (index: number) => () => {
-    cart[index].border = undefined;
-    cart[index].sub_total = new Calculator([
-      cart[index]
-    ]).total;
-    addOrder(cart);
-  };
   return (
     <>
       <div className="back-box">

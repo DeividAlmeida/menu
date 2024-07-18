@@ -10,11 +10,6 @@ export const Nav = () => {
         Início
       </Link>
 
-      {/* <a className='nav-btn' to="/my-order">
-        <i className="fa-solid fa-clipboard-list"></i>
-        Pedidos
-      </a> */}
-
       <Link className='nav-btn' to="/cart">
         <i className="fa-solid fa-cart-shopping"></i>
         Carrinho

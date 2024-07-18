@@ -59,8 +59,6 @@ export const Item = () => {
   }
 
   function addBorder(params:any, row: { key: number; }) {
-    console.log(params, row);
-    
     if(params) {
       setSelectedBorder(row.key);
     } else {
