@@ -5,9 +5,10 @@ import { CartContextType } from "../types/cart";
 import { currencyToString } from "../utils";
 import { Link } from "react-router-dom";
 import { ItemCart } from "./item_cart";
+import { Message } from "../utils/message";
 export const Cart = () => {
   const { cart , total } = useContext(CartContext) as CartContextType;
-  
+  new Message("oi","5575992581723");
   return (
     <>
       <div className="back-box">
@@ -16,13 +17,17 @@ export const Cart = () => {
         </Link>
       </div>
       <h1 className="cart-title">Seu pedido</h1>
-     {
-      cart.map((item, index) => {
-        return (
-          <ItemCart item={item} index={index} key={index}/>
-        )
-      })
-     }
+     { 
+      cart.length === 0 ?
+        <div className="empty-cart">
+          <p className="empty-cart-text">Seu carrinho está vazio =(</p>
+        </div>:
+        cart.map((item, index) => {
+          return (
+            <ItemCart item={item} index={index} key={index}/>
+          )
+        })
+      }
       <h1 className="cart-title">Endereço de entrega</h1>
       <div className="cart-box cart-form">
         <div className="cart-form-row">
@@ -74,6 +79,13 @@ export const Cart = () => {
           <span className="total-price-label">Total</span>
           <strong className="total-price-value">R$ 35,00</strong>
         </div>
+      </div>
+      <div className="next-button-box">
+        <button 
+          className="next-button" 
+        >
+          Finalizar pedido
+        </button>
       </div>
     </>
   );
