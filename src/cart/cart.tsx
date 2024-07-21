@@ -8,7 +8,7 @@ import { ItemCart } from "./item_cart";
 import { Message } from "../utils/message";
 export const Cart = () => {
   const { cart , total } = useContext(CartContext) as CartContextType;
-  new Message("oi","5575992581723");
+  // new Message("5575992581723");
   return (
     <>
       <div className="back-box">
