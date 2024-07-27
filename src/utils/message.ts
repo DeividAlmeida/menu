@@ -1,12 +1,46 @@
 export class Message {
+  private order_number: number;
   constructor(
-    public number: string
+    public data: URLSearchParams
   ) {
-    this.number  =  number;
-    this.sendMessage();
+    this.data  =  data;
+    this.order_number = Math.floor(Math.random() * 1000)
+    this.sendClientMessage();
   }
 
-  private sendMessage(): void {
+
+  private get number(): string {
+    return this.data.get("phone") as string;
+  }
+
+  private get name(): string {
+    return this.data.get("name") as string;
+  }
+
+  private get address(): string {
+    return this.data.get("address") as string;
+  }
+
+  private get sub_total(): string {
+    return this.data.get("total") as string;
+  }
+
+  private get complement(): string {
+    return this.data.get("complement") as string;
+  }
+
+  private get delivery_fee() {
+    return this.data.get("out_town") === "on"? 5.00 : "A combinar";
+  }
+
+  private get total(): string {
+    if (this.delivery_fee === 5.00) {
+      return (parseFloat(this.sub_total) + this.delivery_fee).toFixed(2);
+    }
+    return `${this.data.get("total")} + Entrega` as string;
+  }
+
+  private sendClientMessage(): void {
     fetch(`https://graph.facebook.com/v20.0/${process.env.REACT_APP_META_NUMBER_ID}/messages`, {
       method: "POST",
       headers: {
@@ -39,11 +73,11 @@ export class Message {
               "parameters": [
                 {
                   "type": "text",
-                  "text": "001"
+                  "text": this.order_number
                 },
                 {
                   "type": "text",
-                  "text": "75992581723"
+                  "text": this.number,
                 },
                 {
                   "type": "text",
@@ -59,7 +93,7 @@ export class Message {
                 },
                 {
                   "type": "text",
-                  "text": "[Sabor 3]"
+                  "text": "*[Sabor 3]*"
                 },
                 {
                   "type": "text",
@@ -67,23 +101,23 @@ export class Message {
                 },
                 {
                   "type": "text",
-                  "text": "12.00"
+                  "text": this.sub_total
                 },
                 {
                   "type": "text",
-                  "text": "Rua irmã Dulce"
+                  "text": this.address
                 },
                 {
                   "type": "text",
-                  "text": "5.00"
+                  "text": `${this.delivery_fee}`
                 },
                 {
                   "type": "text",
-                  "text": "Portão branco"
+                  "text": this.complement
                 },
                 {
                   "type": "text",
-                  "text": "17.00"
+                  "text": this.total 
                 }
               ]
             }
