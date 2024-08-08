@@ -1,3 +1,7 @@
+import { currencyToString } from ".";
+import { allItems, border, categories } from "../App";
+import { Cart } from "../types/cart";
+
 export class Message {
   private order_number: number;
   constructor(
@@ -5,9 +9,12 @@ export class Message {
   ) {
     this.data  =  data;
     this.order_number = Math.floor(Math.random() * 1000)
-    this.sendClientMessage();
+    this.send_client_message();
   }
 
+  private get cart(): [] {
+    return JSON.parse(this.data.get("cart") as string);
+  }
 
   private get number(): string {
     return this.data.get("phone") as string;
@@ -21,8 +28,9 @@ export class Message {
     return this.data.get("address") as string;
   }
 
-  private get sub_total(): string {
-    return this.data.get("total") as string;
+  private get sub_total(): number {
+    const total = this.data.get("total") as string;
+    return total ? parseFloat(total) : 0;
   }
 
   private get complement(): string {
@@ -35,12 +43,18 @@ export class Message {
 
   private get total(): string {
     if (this.delivery_fee === 5.00) {
-      return (parseFloat(this.sub_total) + this.delivery_fee).toFixed(2);
+      return currencyToString(this.sub_total + 5);
     }
-    return `${this.data.get("total")} + Entrega` as string;
+    return `${currencyToString(this.sub_total)} + Entrega` as string;
   }
 
-  private sendClientMessage(): void {
+  private get order_detail(): string { 
+    return this.cart.map((item:Cart, index)=>{
+      return `➤ *${categories[item.type].title}:* ${item.tastes.map((taste: number) => `\\n   ● ${allItems[taste].title}`).join(", ")} ${item.border? `\\n   *Borda:*  ${border[item.border].description}` : ""}  \\n   *Sub-total:* ${currencyToString(item.sub_total)}`
+    }).join("\\n \\n");
+  }
+
+  private send_client_message(): void {
     fetch(`https://graph.facebook.com/v20.0/${process.env.REACT_APP_META_NUMBER_ID}/messages`, {
       method: "POST",
       headers: {
@@ -81,27 +95,7 @@ export class Message {
                 },
                 {
                   "type": "text",
-                  "text": "grande"
-                },
-                {
-                  "type": "text",
-                  "text": "[Sabor 1]"
-                },
-                {
-                  "type": "text",
-                  "text": "[Sabor 2]"
-                },
-                {
-                  "type": "text",
-                  "text": "*[Sabor 3]*"
-                },
-                {
-                  "type": "text",
-                  "text": "chedda"
-                },
-                {
-                  "type": "text",
-                  "text": this.sub_total
+                  "text": this.order_detail
                 },
                 {
                   "type": "text",

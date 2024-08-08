@@ -66,14 +66,14 @@ export const Cart = () => {
               <label htmlFor="number" className="radio-lable">Enderço de entrega é fora da cidade?</label>
               <br />
               <div className="form-check">
-                <input className="form-check-input" type="radio" name="out_town" id="yes" required/>
+                <input className="form-check-input" type="radio" name="out_town" id="yes" value={"on"} required/>
                 <label className="form-check-label check-address" htmlFor="yes">
                     Sim
                 </label>
               </div>
               <br/>
               <div className="form-check">
-                <input className="form-check-input" type="radio" name="out_town" id="no" required/>
+                <input className="form-check-input" type="radio" name="out_town" id="no" value={"off"} required/>
                 <label className="form-check-label check-address" htmlFor="no">
                     Não
                 </label>
