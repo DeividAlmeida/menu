@@ -79,6 +79,7 @@ picture > img {
   border-radius: 5px;
   border: solid #dedede 1px;
   flex-flow: column;
+  margin: 0 auto;
   margin-bottom: 20px;
 }
 

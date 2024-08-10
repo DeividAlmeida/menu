@@ -19,7 +19,7 @@ export const Item = () => {
     setTastesState(item.tastes <= tastes.length) 
   }, [item.tastes, tastes]);
   
-  const { cart , total, addOrder } = useContext(CartContext) as CartContextType;
+  const { cart, total, addOrder } = useContext(CartContext) as CartContextType;
   const addCart = () =>  {
     
     addOrder([
@@ -174,7 +174,7 @@ export const Item = () => {
           onClick={()=>addCart()}
           disabled={tastes.length === 0}
         >
-          Adicionar ao carrinho
+          Adicionar
           <b>{ " " + currencyToString(subTotal() + total)}</b>
         </button>
         <Link 

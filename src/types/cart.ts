@@ -7,14 +7,16 @@ export type Cart = {
 
 export type CartContextType = {
   cart: Cart[];
+  discount: number;
   total: number;
-  addOrder: React.Dispatch<React.SetStateAction<Cart[] | []>>;
+  addOrder: (cart: Cart[], new_discount?: number) => void;
 };
 
-interface IItem {
+export interface IItem {
+  id: number;
   title: string;
   image: string;
   description: string;
   details?: any;
-  flavor?: any;
+  price: number;
 }

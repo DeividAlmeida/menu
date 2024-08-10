@@ -37,15 +37,12 @@ export class Message {
     return this.data.get("complement") as string;
   }
 
-  private get delivery_fee() {
-    return this.data.get("out_town") === "on"? 5.00 : "A combinar";
+  private get delivery_fee(): number {
+    return parseInt(this.data.get("delivery_fee") as string);
   }
 
   private get total(): string {
-    if (this.delivery_fee === 5.00) {
-      return currencyToString(this.sub_total + 5);
-    }
-    return `${currencyToString(this.sub_total)} + Entrega` as string;
+    return currencyToString(this.sub_total + this.delivery_fee);
   }
 
   private get order_detail(): string { 
@@ -55,76 +52,77 @@ export class Message {
   }
 
   private send_client_message(): void {
-    fetch(`https://graph.facebook.com/v20.0/${process.env.REACT_APP_META_NUMBER_ID}/messages`, {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${process.env.REACT_APP_META_TOKEN}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        "messaging_product": "whatsapp",
-        "to": this.number,
-        "type": "template",
-        "template": {
-          "name": "gui_pizza",
-          "language": {
-            "code": "pt_BR"
-          },
-          "components": [
-            {
-              "type": "button",
-              "sub_type": "url",
-              "index": 0,
-              "parameters": [
-                {
-                  "type": "text",
-                  "text": "1234567"
-                }
-              ]
+    if (this.cart.length > 0) 
+      fetch(`https://graph.facebook.com/v20.0/${process.env.REACT_APP_META_NUMBER_ID}/messages`, {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${process.env.REACT_APP_META_TOKEN}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          "messaging_product": "whatsapp",
+          "to": this.number,
+          "type": "template",
+          "template": {
+            "name": "gui_pizza",
+            "language": {
+              "code": "pt_BR"
             },
-            {
-              "type": "body",
-              "parameters": [
-                {
-                  "type": "text",
-                  "text": this.order_number
-                },
-                {
-                  "type": "text",
-                  "text": this.number,
-                },
-                {
-                  "type": "text",
-                  "text": this.order_detail
-                },
-                {
-                  "type": "text",
-                  "text": this.address
-                },
-                {
-                  "type": "text",
-                  "text": `${this.delivery_fee}`
-                },
-                {
-                  "type": "text",
-                  "text": this.complement
-                },
-                {
-                  "type": "text",
-                  "text": this.total 
-                }
-              ]
-            }
-          ]
-        }
-      }),
-      redirect: "follow"
-    }).then(
-      response => response.text()
-    ).then(
-      result => console.log(result)
-    ).catch(
-      error => console.log("error", error)
-    );
+            "components": [
+              {
+                "type": "button",
+                "sub_type": "url",
+                "index": 0,
+                "parameters": [
+                  {
+                    "type": "text",
+                    "text": "1234567"
+                  }
+                ]
+              },
+              {
+                "type": "body",
+                "parameters": [
+                  {
+                    "type": "text",
+                    "text": this.order_number
+                  },
+                  {
+                    "type": "text",
+                    "text": this.number,
+                  },
+                  {
+                    "type": "text",
+                    "text": this.order_detail
+                  },
+                  {
+                    "type": "text",
+                    "text": this.address
+                  },
+                  {
+                    "type": "text",
+                    "text": `${this.delivery_fee}`
+                  },
+                  {
+                    "type": "text",
+                    "text": this.complement
+                  },
+                  {
+                    "type": "text",
+                    "text": this.total 
+                  }
+                ]
+              }
+            ]
+          }
+        }),
+        redirect: "follow"
+      }).then(
+        response => response.text()
+      ).then(
+        result => console.log(result)
+      ).catch(
+        error => console.log("error", error)
+      );
   }
 }

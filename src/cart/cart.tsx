@@ -7,10 +7,12 @@ import { Link, useLocation } from "react-router-dom";
 import { ItemCart } from "./item_cart";
 import { Message } from "../utils/message";
 import { message as alert } from 'antd';
+import { DiscountCoupon } from "./discount_coupon";
 export const Cart = () => {
   const [order_status, setOrderStatus] = useState("Seu carrinho está vazio =(");
+  const [delivery_fee, setDeliveryFee] = useState<number>(0);
   const [alertApi, contextHolder] = alert.useMessage();
-  const { cart, total } = useContext(CartContext) as CartContextType;
+  const { cart, discount, total } = useContext(CartContext) as CartContextType;
   
   const data = new URLSearchParams(useLocation().search);
   
@@ -26,6 +28,9 @@ export const Cart = () => {
     }
   }, [])
 
+  const set_delivery_fee = (value: string) => {
+    setDeliveryFee(parseInt(value));
+  }
 
   return (
     <>
@@ -66,14 +71,14 @@ export const Cart = () => {
               <label htmlFor="number" className="radio-lable">Enderço de entrega é fora da cidade?</label>
               <br />
               <div className="form-check">
-                <input className="form-check-input" type="radio" name="out_town" id="yes" value={"on"} required/>
+                <input className="form-check-input" type="radio" name="delivery_fee" id="yes" value={"5"} required onClick={(event) => set_delivery_fee((event.target as HTMLInputElement).defaultValue)} />
                 <label className="form-check-label check-address" htmlFor="yes">
                     Sim
                 </label>
               </div>
               <br/>
               <div className="form-check">
-                <input className="form-check-input" type="radio" name="out_town" id="no" value={"off"} required/>
+                <input className="form-check-input" type="radio" name="delivery_fee" id="no" value={"0"} required onClick={(event) => set_delivery_fee((event.target as HTMLInputElement).defaultValue)} />
                 <label className="form-check-label check-address" htmlFor="no">
                     Não
                 </label>
@@ -86,7 +91,7 @@ export const Cart = () => {
             <input type="hidden" name="total" value={total}/>
           </div>
         </div>
-
+        <DiscountCoupon />
         <div className="total-price">
           <div className="price-box">
             <span className="total-price-label">Sub-Total</span>
@@ -94,11 +99,15 @@ export const Cart = () => {
           </div>
           <div className="price-box">
             <span className="total-price-label">Taxa de entrega</span>
-            <strong className="total-price-value">R$ 35,00</strong>
+            <strong className="total-price-value">{delivery_fee  > 0 ? currencyToString(delivery_fee) : "A combinar"}</strong>
+          </div>
+          <div className="price-box">
+            <span className="total-price-label">Disconto</span>
+            <strong className="total-price-value">{ ` - ${currencyToString(discount)}`}</strong>
           </div>
           <div className="price-box">
             <span className="total-price-label">Total</span>
-            <strong className="total-price-value">R$ 35,00</strong>
+            <strong className="total-price-value">{currencyToString(total + delivery_fee - discount)}</strong>
           </div>
         </div>
         <div className="next-button-box">

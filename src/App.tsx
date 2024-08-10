@@ -4,17 +4,10 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Home } from "./home/home";
 import { Item } from "./detail/detail";
 import { Cart } from "./cart/cart";
+import { CartContextType, Cart as CartType, IItem} from "./types/cart";
 import { Order } from "./myOrder/myOrder"
 import { Nav } from "./nav/nav"
 import { Calculator } from './utils/calculator';
-interface IItem {
-  id: number;
-  title: string;
-  image: string;
-  description: string;
-  price: number;
-  details?: any;
-}
 
 export const allItems: IItem[] = [
   {
@@ -247,24 +240,24 @@ export const border = [
   }
 ];
 
-type CartContextType = {
-  cart: any[];
-  total: number;
-  addOrder: React.Dispatch<React.SetStateAction<IItem[] | [
-
-  ]>>;
+export const coupons: Record<string, number> = {
+  "5off": 0.05,
 };
-export const CartContext = createContext<CartContextType | any[]>([]);
+
+
+export const CartContext = createContext<CartContextType | []>([]);
 function App() {
-  const [cart, setCart] = useState<any[]>([]);
+  const [cart, setCart] = useState<CartType[]>([]);
   const [total, setTotal] = useState<number>(0);
-    const addOrder = (cart: any) => {     
+  const [discount, setDiscount] = useState<number>(0);
+    const addOrder = (cart: CartType[], new_discount?: number) => {     
       setCart(cart)
       const calc = new Calculator(cart).total;
+      setDiscount(new_discount?? discount);
       setTotal(calc);
     }
   return (
-    <CartContext.Provider value={{ cart, total, addOrder }}>
+    <CartContext.Provider value={{ cart, discount, total, addOrder }}>
       <Router>
           <main>
             <section>
