@@ -8,8 +8,7 @@ export class Message {
     public data: URLSearchParams
   ) {
     this.data  =  data;
-    this.order_number = Math.floor(Math.random() * 1000)
-    this.send_client_message();
+    this.order_number = Math.floor(Math.random() * 1000);
   }
 
   private get cart(): [] {
@@ -56,9 +55,9 @@ export class Message {
     }).join("\\n \\n");
   }
 
-  private send_client_message(): void {
-    if (this.cart.length > 0) 
-      fetch(`https://graph.facebook.com/v20.0/${process.env.REACT_APP_META_NUMBER_ID}/messages`, {
+  public async  send_client_message() {
+    if (this.cart.length > 0){
+      const send =  await fetch(`https://graph.facebook.com/v20.0/${process.env.REACT_APP_META_NUMBER_ID}/messages`, {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${process.env.REACT_APP_META_TOKEN}`,
@@ -134,12 +133,8 @@ export class Message {
           }
         }),
         redirect: "follow"
-      }).then(
-        response => response.text()
-      ).then(
-        result => console.log(result)
-      ).catch(
-        error => console.log("error", error)
-      );
+      });
+      return send.json();
+    }
   }
 }

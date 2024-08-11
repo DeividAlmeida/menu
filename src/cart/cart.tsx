@@ -8,28 +8,40 @@ import { ItemCart } from "./item_cart";
 import { Message } from "../utils/message";
 import { message as alert } from 'antd';
 import { DiscountCoupon } from "./discount_coupon";
+import { LoadingOutlined } from "@ant-design/icons";
 export const Cart = () => {
-  const [order_status, setOrderStatus] = useState("Seu carrinho está vazio =(");
+  const [order_status, setOrderStatus] = useState(<>{"Seu carrinho está vazio =("}</>);
   const [delivery_fee, setDeliveryFee] = useState<number>(0);
+  const [disabled, setDisabled] = useState<boolean>(false);
   const [alertApi, contextHolder] = alert.useMessage();
-  const { cart, discount, total } = useContext(CartContext) as CartContextType;
-  
+  const { cart, discount, total, addOrder } = useContext(CartContext) as CartContextType;
   const data = new URLSearchParams(useLocation().search);
   
   useEffect(() => {
     if (data.size === 8) {
+      sendMessage();
       alertApi.open({
-        type: 'loading',
-        content: 'Action in progress..',
-        duration: 2.5,
+        type: "loading",
+        content: "Processando seu pedido",
       });
-      setOrderStatus("Porcessando seu pedido..");
-      new Message(data);
+      setOrderStatus(<>{"Processando seu pedido"} <LoadingOutlined /></>);
     }
   }, [])
 
   const set_delivery_fee = (value: string) => {
     setDeliveryFee(parseInt(value));
+  }
+
+  const sendMessage =  async () => {
+    try {
+      const message =  new Message(data);
+    const client_message = await message.send_client_message();
+      
+    } catch (error) {
+      console.error(error);
+      alertApi.error("Erro ao enviar pedido");
+      return;
+    }
   }
 
   return (
@@ -53,7 +65,7 @@ export const Cart = () => {
         })
       }
       <h1 className="cart-title">Endereço de entrega</h1>
-      <form lang="pt">
+      <form lang="pt" onSubmit={(e)=>  setDisabled(true)}>
         <div className="cart-box cart-form">
           <div className="cart-form-row">
             <div className="cart-form-column">
@@ -113,7 +125,7 @@ export const Cart = () => {
         </div>
         <div className="next-button-box">
           <button 
-            disabled={cart.length === 0}
+            disabled={disabled}
             className="next-button" 
             type="submit"
           >
