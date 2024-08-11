@@ -1,9 +1,7 @@
-import { useContext, useState } from "react";
-import { Cart, CartContextType } from "../types/cart";
-import { allItems, border, CartContext, categories, coupons } from "../App";
-import { Calculator } from "../utils/calculator";
-import { currencyToString } from "../utils";
-import { Button, Input, Space } from 'antd';
+import { useContext } from "react";
+import { CartContextType } from "../types/cart";
+import { CartContext, coupons } from "../App";
+import { Input, Space } from 'antd';
 
 export const DiscountCoupon = () => {
   const { cart, total, addOrder } = useContext(CartContext) as CartContextType;
@@ -16,8 +14,8 @@ export const DiscountCoupon = () => {
 
   return (
     <>
-     <Space align="start"  className="item-size-box">
-        <Search  placeholder="input search text" enterButton="Aplicar" onSearch={apply_coupon} />
+     <Space align="start"  className="coupon-box">
+        <Search  placeholder="Cupon de desconto" enterButton="Aplicar" onSearch={apply_coupon} size="large" />
      </Space>
     </>
   )

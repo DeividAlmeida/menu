@@ -1,5 +1,5 @@
 import { Cart } from "../types/cart";
-import { allItems, border, categories, CartContext } from "../App";
+import { allItems, border, categories } from "../App";
 export class Calculator  {
   public total: number = 0;
   constructor( 

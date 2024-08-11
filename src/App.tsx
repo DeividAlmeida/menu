@@ -8,6 +8,7 @@ import { CartContextType, Cart as CartType, IItem} from "./types/cart";
 import { Order } from "./myOrder/myOrder"
 import { Nav } from "./nav/nav"
 import { Calculator } from './utils/calculator';
+import { Contact } from './contact/contact';
 
 export const allItems: IItem[] = [
   {
@@ -267,6 +268,7 @@ function App() {
                   <Route path="/:id" element={<Item />} />
                   <Route path="cart" element={<Cart />} />
                   <Route path='my-order' element={<Order />} />
+                  <Route path='contact/:number' element={<Contact />} />
                 </Routes>
               </div>
             </section>

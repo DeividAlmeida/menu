@@ -33,7 +33,12 @@ export class Message {
     return total ? parseFloat(total) : 0;
   }
 
+  private get discount (): number {
+    return parseFloat(this.data.get("discount") as string);
+  }
+
   private get complement(): string {
+    if(this.data.get("complement")!.length === 0) return "N/A";
     return this.data.get("complement") as string;
   }
 
@@ -41,8 +46,8 @@ export class Message {
     return parseInt(this.data.get("delivery_fee") as string);
   }
 
-  private get total(): string {
-    return currencyToString(this.sub_total + this.delivery_fee);
+  private get total(): number {
+    return this.sub_total - this.discount + this.delivery_fee;
   }
 
   private get order_detail(): string { 
@@ -76,7 +81,7 @@ export class Message {
                 "parameters": [
                   {
                     "type": "text",
-                    "text": "1234567"
+                    "text": process.env.REACT_APP_PHONE_NUMBER
                   }
                 ]
               },
@@ -85,11 +90,15 @@ export class Message {
                 "parameters": [
                   {
                     "type": "text",
-                    "text": this.order_number
+                    "text": this.order_number 
                   },
                   {
                     "type": "text",
                     "text": this.number,
+                  },
+                  {
+                    "type": "text",
+                    "text": this.name,
                   },
                   {
                     "type": "text",
@@ -101,15 +110,23 @@ export class Message {
                   },
                   {
                     "type": "text",
-                    "text": `${this.delivery_fee}`
-                  },
-                  {
-                    "type": "text",
                     "text": this.complement
                   },
                   {
                     "type": "text",
-                    "text": this.total 
+                    "text": currencyToString(this.delivery_fee)
+                  },
+                  {
+                    "type": "text",
+                    "text": currencyToString(this.discount)
+                  },
+                  {
+                    "type": "text",
+                    "text": currencyToString(this.total)
+                  },
+                  {
+                    "type": "text",
+                    "text": "o atendente"
                   }
                 ]
               }

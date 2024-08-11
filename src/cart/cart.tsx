@@ -17,7 +17,7 @@ export const Cart = () => {
   const data = new URLSearchParams(useLocation().search);
   
   useEffect(() => {
-    if (data.size === 7) {
+    if (data.size === 8) {
       alertApi.open({
         type: 'loading',
         content: 'Action in progress..',
@@ -89,6 +89,7 @@ export const Cart = () => {
             </div>
             <input type="hidden" name="cart" value={JSON.stringify(cart)}/>
             <input type="hidden" name="total" value={total}/>
+            <input type="hidden" name="discount" value={discount}/>
           </div>
         </div>
         <DiscountCoupon />
