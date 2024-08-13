@@ -179,13 +179,22 @@
   padding: 3px 10px;
 }
 
+.cart-form-merged-column {
+  width: 85%;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column;
+  min-width: 300px;
+  padding: 3px 10px;
+}
+
 .form-check > label {
   cursor: pointer;
 }
 
-.radio-lable {
+.form-lable {
   font-size: medium;
-  text-align: center;
+  margin-top: 12px;
 }
 
 .empty-cart {
@@ -208,4 +217,11 @@
   justify-content: end;
   margin: 0 auto;
   padding: 30px 0;
+}
+
+.form-helper {
+  margin-top: 5px;
+  font-size: 10px;
+  color: red;
+  font-weight: normal;
 }

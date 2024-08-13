@@ -5,7 +5,7 @@ import { Cart } from "../types/cart";
 export class Message {
   private order_number: number;
   constructor(
-    public data: URLSearchParams
+    public data: FormData
   ) {
     this.data  =  data;
     this.order_number = Math.floor(Math.random() * 1000);
@@ -37,7 +37,7 @@ export class Message {
   }
 
   private get complement(): string {
-    if(this.data.get("complement")!.length === 0) return "N/A";
+    if(this.data.get("complement") === "") return "N/A";
     return this.data.get("complement") as string;
   }
 

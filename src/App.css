@@ -107,7 +107,12 @@ select {
   background-repeat: no-repeat;
   background-position: right .75rem center;
   background-size: 16px 12px;
+  background-color: #ffffff;
+  border: #dedede solid 1px;
+  border-radius: 5px;
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  margin-bottom: .5rem;
+  margin-top: .5rem;
 }
 
 textarea, input {
