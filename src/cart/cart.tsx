@@ -6,13 +6,11 @@ import { Link } from "react-router-dom";
 import { CartItem } from "./cart_item";
 import { CartForm } from "./cart_form";
 import { useContext, useState } from "react";
+
 export const Cart = () => {
   const [order_status, setOrderStatus] = useState(<>{"Seu carrinho está vazio =("}</>);
-  const { cart, discount, total, addOrder } = useContext(CartContext) as CartContextType;
+  const { cart } = useContext(CartContext) as CartContextType;
   
-  
-  
-
   return (
     <>
       

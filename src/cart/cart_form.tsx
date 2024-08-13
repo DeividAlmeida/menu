@@ -3,7 +3,7 @@ import { CartContext, valid_ddds } from "../App";
 import { CartContextType } from "../types/cart";
 import { currencyToString } from "../utils";
 import { DiscountCoupon } from "./discount_coupon";
-import { Input, message as alert } from 'antd';
+import { Modal, Input, message as alert } from 'antd';
 import { Message } from "../utils/message";
 import { LoadingOutlined } from "@ant-design/icons";
 
@@ -14,6 +14,18 @@ export const CartForm = () => {
   const [disabled, setDisabled] = useState<boolean>(false);
   const {cart, discount, total, addOrder } = useContext(CartContext) as CartContextType;
   const [alertApi, contextHolder] = alert.useMessage();
+  const [modal, contextModalHolder] = Modal.useModal();
+
+  const sucess_modal = () => {
+    const instance = modal.success({
+      title: 'Pedido enviado com sucesso',
+      content: `Você receberá uma mensagem de confirmação do seu pedido em instantes no whatsapp`,
+    });
+    setTimeout(() => {
+      instance.destroy();
+    }, 10000);
+  };
+  
 
   const set_delivery_fee = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setDeliveryFee(parseInt(event.target.value));
@@ -30,19 +42,23 @@ export const CartForm = () => {
       // inicializa o evento
       event.preventDefault();
       number_validation();
-      // setDisabled(true);
+      setDisabled(true);
       alertApi.open({
         type: "loading",
         content: "Processando seu pedido",
       });
 
       // setOrderStatus(<>{"Processando seu pedido"} <LoadingOutlined /></>);
-
+      sucess_modal();
       const message =  new Message(data);
-      const client_message = await message.send_client_message();
+      const {messages} = await message.send_client_message();
+      addOrder([]);
+      setDisabled(false);
+      console.log(messages[0].message_status);
+      
       
     } catch (error) {
-      console.error(error);
+      setDisabled(false);
       alertApi.error("Erro ao enviar pedido");
       return;
     }
@@ -67,6 +83,7 @@ export const CartForm = () => {
   return (
     <>
       {contextHolder}
+      {contextModalHolder}
       <h1 className="cart-title">Endereço de entrega</h1>
       <form lang="pt" onSubmit={submit} >
         <div className="cart-box cart-form">
@@ -101,8 +118,14 @@ export const CartForm = () => {
 
             <div className="cart-form-column">
               <label className="form-lable">Forma de Pagamento: </label>
-              <select name="payment" className="form-field" required onFocus={number_validation} > 
-                <option value="" selected hidden>Selecione uma opção</option>
+              <select 
+                name="payment"
+                className="form-field"
+                defaultValue=""
+                required
+                onFocus={number_validation}
+              > 
+                <option value="" hidden>Selecione uma opção</option>
                 <option value="Dinheiro">Dinheiro</option>
                 <option value="Pix">Pix</option>
                 <option value="Cartão">Cartão</option>
@@ -113,14 +136,15 @@ export const CartForm = () => {
               <label className="form-lable">Endereço de entrega é fora da cidade?</label>
               <select
                 className="form-field"
-                name="delivery_fee" 
+                name="delivery_fee"
+                defaultValue=""
                 required 
                 onFocus={number_validation} 
                 onChange={set_delivery_fee}
               > 
-                <option value="" selected hidden>Selecione uma opção</option>
-                <option value="5">Sim</option>
-                <option value="0">Não</option>
+                <option value="" hidden>Selecione uma opção</option>
+                <option value="0">Sim</option>
+                <option value="5">Não</option>
               </select>
             </div>
             <div className="cart-form-column" id="complement">
@@ -157,7 +181,8 @@ export const CartForm = () => {
             className="next-button" 
             type="submit"
           >
-            Finalizar pedido
+             
+           {disabled?  <LoadingOutlined />: "Finalizar pedido"}
           </button>
         </div>
       </form>

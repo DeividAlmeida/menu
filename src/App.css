@@ -308,3 +308,7 @@ summary {
   color: white;
   border: none;
 }
+
+.ant-btn-lg {
+  background-color: #00c700;
+}

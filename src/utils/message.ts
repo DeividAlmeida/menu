@@ -40,9 +40,18 @@ export class Message {
     if(this.data.get("complement") === "") return "N/A";
     return this.data.get("complement") as string;
   }
+  private get payment(): string {
+    return this.data.get("payment") as string;
+  }
 
   private get delivery_fee(): number {
     return parseInt(this.data.get("delivery_fee") as string);
+  }
+
+  private get delivery_fee_filted(): string {
+    return this.data.get("delivery_fee") === "0" 
+      ? "A combinar"
+      :  currencyToString(this.delivery_fee);
   }
 
   private get total(): number {
@@ -113,7 +122,11 @@ export class Message {
                   },
                   {
                     "type": "text",
-                    "text": currencyToString(this.delivery_fee)
+                    "text": this.payment
+                  },
+                  {
+                    "type": "text",
+                    "text": this.delivery_fee_filted
                   },
                   {
                     "type": "text",
