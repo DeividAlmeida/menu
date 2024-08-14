@@ -2,34 +2,88 @@ import { useState, useContext } from 'react';
 import { allItems, categories, CartContext } from "../App";
 import './home.css';
 import { currencyToString } from '../utils';
-import { Nav } from '../nav/nav';
+import { Tabs } from 'antd';
 import { Link } from 'react-router-dom';
 export const Home = () => {
   return (
     <>
       <div className="home">
-        <header>
-          <h1>Delicious Gui Pizza</h1>
-          {/* <div className="filter">
-            <input type="text" placeholder="Encontre sua pizza" onChange={searchItem} className="search" />
-          </div> */}
-        </header>
-        <div className="menu">
-          <div className="card-container">
-            {categories.map((item: any, index: number) => (            
-              <Link className="card" key={index} to={`/${index}`}>
-                <img src={item.image} alt={item.title} />
-                <div className="card-content">
-                  <h4>{item.title}</h4>
-                  <p >{item.description}</p>
-                  <p className="price"> {currencyToString(item.price)}</p>
+      <Tabs
+        // onChange={onChange}
+        type="card"
+        items=
+        {
+          [
+            {
+              label: "Todos",
+              key: "0",
+              children: (
+                <div className="menu">
+                  <div className="card-container">
+                    {
+                      categories.map((item: any, index: number) => (            
+                        <Link className="card" key={index} to={`/${index}`}>
+                          <img src={item.image} alt={item.title} />
+                          <div className="card-content">
+                            <h4>{item.title}</h4>
+                            <p >{item.description}</p>
+                            <p className="price"> {currencyToString(item.price)}</p>
+                          </div>
+                        </Link>
+                      ))
+                    }
+                  </div>
                 </div>
-              </Link>
-            ))}
-          </div>
-        </div>
+              ),
+            },
+            {
+              label: "Pizzas",
+              key: "1",
+              children: (
+                <div className="menu">
+                  <div className="card-container">
+                    {
+                      categories.map((item: any, index: number) => (            
+                        <Link className="card" key={index} to={`/${index}`}>
+                          <img src={item.image} alt={item.title} />
+                          <div className="card-content">
+                            <h4>{item.title}</h4>
+                            <p >{item.description}</p>
+                            <p className="price"> {currencyToString(item.price)}</p>
+                          </div>
+                        </Link>
+                      ))
+                    }
+                  </div>
+                </div>
+              ),
+            },
+            {
+              label: "Bebidas",
+              key: "2",
+              children: (
+                <div className="menu">
+                  <div className="card-container">
+                    {
+                      categories.map((item: any, index: number) => (            
+                        <Link className="card" key={index} to={`/${index}`}>
+                          <img src={item.image} alt={item.title} />
+                          <div className="card-content">
+                            <h4>{item.title}</h4>
+                            <p >{item.description}</p>
+                            <p className="price"> {currencyToString(item.price)}</p>
+                          </div>
+                        </Link>
+                      ))
+                    }
+                  </div>
+                </div>
+              ),
+            },
+          ]
+        }
+      />
       </div>
-      <Nav />
     </>
   )
 };

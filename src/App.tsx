@@ -1,12 +1,11 @@
-import React, { useState, createContext } from 'react';
+import { useState, createContext } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Home } from "./home/home";
-import { Item } from "./detail/detail";
+import { Item } from "./detail/item";
 import { Cart } from "./cart/cart";
 import { CartContextType, Cart as CartType, IItem} from "./types/cart";
 import { Order } from "./myOrder/myOrder"
-import { Nav } from "./nav/nav"
 import { Calculator } from './utils/calculator';
 import { Contact } from './contact/contact';
 
@@ -210,7 +209,7 @@ export const categories = [
     tastes: 3,
     size:12,
     price: 20.00,
-  }
+  },
 ]
 
 export const border = [
@@ -282,7 +281,7 @@ function App() {
   const [discount, setDiscount] = useState<number>(0);
   const addOrder = (cart: CartType[], new_discount?: number) => {     
     setCart(cart)
-    const calc = new Calculator(cart).total;
+    const calc = new Calculator(cart).calcTotal();
     setDiscount(new_discount?? discount);
     setTotal(calc);
   }

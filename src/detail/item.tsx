@@ -1,20 +1,29 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from 'react';
 import { allItems, border, categories, CartContext } from "../App";
-import "./detail.css";
+import "./item.css";
 import { currencyToString } from "../utils/index";
 import { Calculator } from "../utils/calculator";
-import { Cart, CartContextType } from "../types/cart";
+import { CartContextType, IItem } from "../types/cart";
+import { ItemInfo } from "./item_info";
+import { Button, Modal } from 'antd';
+import { ArrowLeftOutlined } from "@ant-design/icons";
+
 
 export const Item = () => {
+  const [filteredItems, setFilteredItems] = useState(allItems);
+  const [adicional_price, setAdicionalPrice] = useState(0);
   const [key, setKey] = useState(0);
   const [tastesState, setTastesState] = useState(false);
   const [tastes, setTastes] = useState<number[]>([]);
   const [selectedBorder, setSelectedBorder] = useState<number>();
-  let { id } = useParams();
-  let index = id ? parseInt(id) : 0;
+  const [modal, contextModalHolder] = Modal.useModal();
+  const navigate = useNavigate();  
+
+  const { id } = useParams();
+  const index = id ? parseInt(id) : 0;
   const item = categories[index];
- 
+
   useEffect(() => {
     setTastesState(item.tastes <= tastes.length) 
   }, [item.tastes, tastes]);
@@ -30,11 +39,10 @@ export const Item = () => {
       border: selectedBorder,
       sub_total: subTotal()
     }])
-    setKey((prev)=> prev + 1)
     setTastesState(false);
     setTastes([]);
     setSelectedBorder(undefined);
-
+    sucess_modal();
   }
 
   const subTotal = () => {
@@ -46,16 +54,26 @@ export const Item = () => {
           border: selectedBorder,
           sub_total: 0
         }
-      ]).total;
-    } else return 0;
+      ]
+    ).calcTotal();
+    } else {
+
+      return 0;
+    }
   }
 
-  function setCart(params: any, row: { id: number; }) {
-    if(params) {
-      setTastes(a=> [...a, row.id]);
-    } else {
-      setTastes(a => [ ...a.filter((item) => item !== row.id)]);
-    }
+  function setCart(params: boolean, row:IItem) {
+    setTastes(
+      a => {
+        let new_tastes: number[];
+        if(params) {
+          new_tastes = [...a, row.id];
+        } else {
+          new_tastes =  a.filter((item) => item !== row.id);
+        }
+        setAdicionalPrice(new Calculator().calcTastePrice(new_tastes));
+        return new_tastes;
+    });
   }
 
   function addBorder(params:any, row: { key: number; }) {
@@ -66,22 +84,50 @@ export const Item = () => {
     }
   }
 
-  const [filteredItems, setFilteredItems] = useState(allItems);
   function searchItem(event: React.ChangeEvent<HTMLInputElement>) {
     const query = event.target.value;
     setFilteredItems(
       allItems.filter(item => {
-        return item.title.toLowerCase().includes(query.toLowerCase()) || item.description.toLowerCase().includes(query.toLowerCase());
+        if( tastes.includes(item.id)) {
+          return true;
+        } else {
+          return item.title.toLowerCase().includes(query.toLowerCase()) || item.description.toLowerCase().includes(query.toLowerCase());
+        }
       })
     );
   }
+
+  const sucess_modal = () => {
+    modal.success({
+      title: 'Item adicionado',
+      content: (<p>Item adicionado ao Carrinho!!</p>),
+      okText: "Finalizar Pedido",
+      onOk: () => {
+        navigate("/cart");
+      },
+      
+      footer: (_, { OkBtn, CancelBtn }) => (
+        <>
+          <Button>
+            <Link to={"/"}>
+              Continuar Comprando
+            </Link>
+          </Button>
+          <CancelBtn />
+          <OkBtn />
+        </>
+      ),
+    });
+  };
+
   return (
     <div key={key}>
+      {contextModalHolder}
       <picture>
       <div className="control" >
         <div className="back-icon">
           <Link to="/">
-            <i className="fa-solid fa-arrow-left" />
+            <ArrowLeftOutlined />
           </Link>
         </div>
       </div>
@@ -110,24 +156,24 @@ export const Item = () => {
           <div className="item-body">
             <div className="content">
               {
-                filteredItems.map((item: any, index: number) => {
+                filteredItems.map((item: IItem, index: number) => {
                   const typeKey = index.toString();
                   return (
-                    <div className="item-info size-body-box" key={index}>
-                      <div className="title-subtitle-box">
-                        <div className="check-title" style={{color: "black"}}>{item.title}</div>
-                        <div className="check-subtitle">{item.description} </div>
-                          <div className="price" style={{color: "red"}}>
-                            + {
-                              currencyToString(item.price)
-                            }
-                          </div>
-                      </div>
+                    <label 
+                      htmlFor={typeKey}
+                      className={`item-info size-body-box 
+                        ${tastesState && !tastes.includes(item.id)
+                          ? "disactive"
+                          : "active"}`
+                      }
+                      key={index}
+                    >
+                      <ItemInfo item={item} adicional_price={adicional_price} />
                       <p>
-                        <input disabled={tastesState && !tastes.includes(item.id)} type="checkbox" id={typeKey}  onChange={(e)=> setCart(e.target.checked, item) }/>
+                        <input checked={tastes.includes(item.id)} disabled={tastesState && !tastes.includes(item.id)} type="checkbox" id={typeKey}  onChange={(e)=> setCart(e.target.checked, item) }/>
                         <label htmlFor={typeKey}></label>
                       </p>
-                    </div>
+                    </label>
                   )
                 })
               }
@@ -144,7 +190,15 @@ export const Item = () => {
               {
                 border.map((item, index) => {
                   return (
-                    <div className="item-info size-body-box" key={index}>
+                    <label
+                      htmlFor={"b"+item.key}
+                      className={`item-info size-body-box 
+                        ${selectedBorder !== undefined && selectedBorder !== item.key
+                          ? "disactive"
+                          : "active"}`
+                      }
+                      key={index}
+                    >
                       <div className="title-subtitle-box">
                         <div className="check-title" style={{color: "black"}}>{item.description}</div>
                         <div className="price" style={{color: "red"}}>
@@ -157,7 +211,7 @@ export const Item = () => {
                         <input disabled={selectedBorder !== undefined && selectedBorder !== item.key } type="checkbox" id={"b"+item.key} name="border" onChange={(e)=> addBorder(e.target.checked, item) }/>
                         <label htmlFor={"b"+item.key}></label>
                       </p>
-                    </div>
+                    </label>
                   )
                 })
               }
@@ -177,12 +231,12 @@ export const Item = () => {
           Adicionar
           <b>{ " " + currencyToString(subTotal() + total)}</b>
         </button>
-        <Link 
+        {/* <Link 
           to="/cart"
           className="order-button" 
         >
           <center>Ver Pedido <i className="fa fa-shopping-cart" aria-hidden="true"></i></center> 
-        </Link>
+        </Link> */}
         
       </div>
     </div>

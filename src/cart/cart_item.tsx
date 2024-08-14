@@ -11,7 +11,7 @@ type PropsType = {
 export const CartItem = ({ item, index }: PropsType) => {
   const { cart , addOrder } = useContext(CartContext) as CartContextType;
   const [key , setKey] = useState(index);
-  
+
   const removeItem = (index: number) => () => {
     cart.splice(index, 1)
     addOrder(cart);
@@ -22,7 +22,7 @@ export const CartItem = ({ item, index }: PropsType) => {
    cart[item_index].tastes.splice(taste_index, 1);
    cart[item_index].sub_total = new Calculator([
     cart[item_index]
-  ]).total;
+  ]).calcTotal();
     addOrder(cart);
     setKey((prev) => prev + 1);
   };
@@ -31,7 +31,7 @@ export const CartItem = ({ item, index }: PropsType) => {
     cart[index].border = undefined;
     cart[index].sub_total = new Calculator([
       cart[index]
-    ]).total;
+    ]).calcTotal();
     addOrder(cart);
     setKey((prev) => prev + 1);
   };

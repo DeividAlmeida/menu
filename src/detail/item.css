@@ -63,9 +63,8 @@ picture > img {
 }
 
 .item-container {
-  text-align: left;
+  text-align: center;
   padding: 10px;
-  width: 80%;
 }
 
 .item-size-box {

@@ -64,7 +64,11 @@ export class Message {
     }).join("\\n \\n");
   }
 
-  public async  send_client_message() {
+  public async  send_message(
+    to = this.number,
+    to_nickname = "o atendente",
+    chat_number = process.env.REACT_APP_PHONE_NUMBER
+  ) {
     if (this.cart.length > 0){
       const send =  await fetch(`https://graph.facebook.com/v20.0/${process.env.REACT_APP_META_NUMBER_ID}/messages`, {
         method: "POST",
@@ -74,7 +78,7 @@ export class Message {
         },
         body: JSON.stringify({
           "messaging_product": "whatsapp",
-          "to": this.number,
+          "to": to,
           "type": "template",
           "template": {
             "name": "gui_pizza",
@@ -89,7 +93,7 @@ export class Message {
                 "parameters": [
                   {
                     "type": "text",
-                    "text": process.env.REACT_APP_PHONE_NUMBER
+                    "text": chat_number
                   }
                 ]
               },
@@ -138,7 +142,7 @@ export class Message {
                   },
                   {
                     "type": "text",
-                    "text": "o atendente"
+                    "text": to_nickname
                   }
                 ]
               }

@@ -1,4 +1,5 @@
 import { useState, useContext } from "react";
+import { useNavigate } from 'react-router-dom';
 import { CartContext, valid_ddds } from "../App";
 import { CartContextType } from "../types/cart";
 import { currencyToString } from "../utils";
@@ -15,15 +16,17 @@ export const CartForm = () => {
   const {cart, discount, total, addOrder } = useContext(CartContext) as CartContextType;
   const [alertApi, contextHolder] = alert.useMessage();
   const [modal, contextModalHolder] = Modal.useModal();
+  const navigate = useNavigate();  
 
-  const sucess_modal = () => {
-    const instance = modal.success({
-      title: 'Pedido enviado com sucesso',
-      content: `Você receberá uma mensagem de confirmação do seu pedido em instantes no whatsapp`,
+  const sucess_modal = (number: string) => {
+    modal.success({
+      title: 'Pedido enviado com sucesso !!',
+      content: (<p>Você receberá uma mensagem de confirmação do seu pedido em instantes no whatsapp <b>{number}</b></p>),
+      onOk: () => {
+        navigate("/");
+      },
+      styles: {}
     });
-    setTimeout(() => {
-      instance.destroy();
-    }, 10000);
   };
   
 
@@ -38,28 +41,33 @@ export const CartForm = () => {
 
   const submit =  async (event:  React.FormEvent<HTMLFormElement>) => {
     try {
-      const data = new FormData(event.target as HTMLFormElement);
-      // inicializa o evento
       event.preventDefault();
+      const data = new FormData(event.target as HTMLFormElement);
       number_validation();
+      if (number_error) throw new Error("Número inválido");
+      
       setDisabled(true);
       alertApi.open({
         type: "loading",
         content: "Processando seu pedido",
+        duration: 0,
       });
 
-      // setOrderStatus(<>{"Processando seu pedido"} <LoadingOutlined /></>);
-      sucess_modal();
       const message =  new Message(data);
-      const {messages} = await message.send_client_message();
+      var { messages } = await message.send_message();
+      if(messages[0]?.message_status !== "accepted") throw new Error("Erro ao enviar pedido");
+      
+      var { messages } = await message.send_message(process.env.REACT_APP_PHONE_NUMBER, "o cliente", number);
+      if(messages[0]?.message_status !== "accepted") throw new Error("Erro ao enviar pedido");
+      
+      alertApi.destroy();
+      sucess_modal(number);
+      
       addOrder([]);
-      setDisabled(false);
-      console.log(messages[0].message_status);
-      
-      
+      setDisabled(false);     
     } catch (error) {
       setDisabled(false);
-      alertApi.error("Erro ao enviar pedido");
+      alertApi.error(`Erro ao enviar pedido ${error}`);
       return;
     }
   }
@@ -163,12 +171,12 @@ export const CartForm = () => {
             <strong className="total-price-value">{currencyToString(total)}</strong>
           </div>
           <div className="price-box">
-            <span className="total-price-label">Taxa de entrega</span>
-            <strong className="total-price-value">{delivery_fee  > 0 ? currencyToString(delivery_fee) : "A combinar"}</strong>
-          </div>
-          <div className="price-box">
             <span className="total-price-label">Disconto</span>
             <strong className="total-price-value">{ ` - ${currencyToString(discount)}`}</strong>
+          </div>
+          <div className="price-box">
+            <span className="total-price-label">Taxa de entrega</span>
+            <strong className="total-price-value">{delivery_fee  > 0 ? currencyToString(delivery_fee) : "A combinar"}</strong>
           </div>
           <div className="price-box">
             <span className="total-price-label">Total</span>

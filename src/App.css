@@ -12,15 +12,17 @@ body {
 }
 
 #root {
-  min-height: 969px;
   overflow: visible;
+  height: 100%;
+  display: flex;
+  align-items: end;
 }
 
 main {
   flex: 1;
   display: flex;
   justify-content: center;
-  height: 100%;
+  height: auto;
 }
 
 section {
@@ -58,16 +60,6 @@ header {
   width: 100%;
 }
 
-footer {
-  text-align: center;
-  /* padding: 1rem 0; */
-  background-color: #ff6347;
-  color: white;
-  /*position: relative; */
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
 
 /* Personaliza o scrollbar geral */
 ::-webkit-scrollbar {
@@ -150,7 +142,7 @@ textarea, input {
     cursor: pointer;
     line-height: 20px;
     display: inline-block;
-    color: #666;
+    color: #00c700;
 }
 
 [type="checkbox"]:disabled:not(:checked) + label,
@@ -180,7 +172,7 @@ textarea, input {
     content: '';
     width: 12px;
     height: 12px;
-    background: #929191;
+    background: #00c700;
     position: absolute;
     top: 4px;
     left: 4px;
@@ -309,6 +301,28 @@ summary {
   border: none;
 }
 
-.ant-btn-lg {
-  background-color: #00c700;
+.ant-btn-lg, .ant-btn-primary {
+  background-color: #00c700 !important;
+}
+
+.ant-btn-lg:active, .ant-btn-primary:active {
+  background-color: #00c700 !important;
+  opacity: var(--bs-btn-disabled-opacity);
+}
+
+.active {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.disactive {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #f0f0f0;
+}
+
+.ant-btn-default:hover {
+  color: #000 !important;
+  border-color: #00c700 !important;
+  background: #ffffff !important;
 }

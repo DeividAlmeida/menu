@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { CartItem } from "./cart_item";
 import { CartForm } from "./cart_form";
 import { useContext, useState } from "react";
+import { ArrowLeftOutlined } from "@ant-design/icons";
 
 export const Cart = () => {
   const [order_status, setOrderStatus] = useState(<>{"Seu carrinho está vazio =("}</>);
@@ -16,7 +17,7 @@ export const Cart = () => {
       
       <div className="back-box">
         <Link to="/" className="back">
-          <i className="fa-solid fa-arrow-left" />
+          <ArrowLeftOutlined />
         </Link>
       </div>
       <h1 className="cart-title">Seu pedido</h1>
