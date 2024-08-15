@@ -66,9 +66,10 @@ export const CartForm = () => {
       addOrder([]);
       setDisabled(false);     
     } catch (error) {
+
+      alertApi.destroy();
       setDisabled(false);
       alertApi.error(`Erro ao enviar pedido ${error}`);
-      return;
     }
   }
 

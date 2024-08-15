@@ -222,3 +222,13 @@ picture > img {
   font-size: 14px;
   line-height: 18px;
 }
+
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search {
+  width: 80%;
+}
