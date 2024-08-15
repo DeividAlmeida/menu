@@ -69,6 +69,8 @@ export class Message {
     to_nickname = "o atendente",
     chat_number = process.env.REACT_APP_PHONE_NUMBER
   ) {
+    console.log(chat_number);
+    
     if (this.cart.length > 0){
       const send =  await fetch(`https://graph.facebook.com/v20.0/${process.env.REACT_APP_META_NUMBER_ID}/messages`, {
         method: "POST",
