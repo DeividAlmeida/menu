@@ -200,7 +200,7 @@ export const categories = [
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     tastes: 2,
     size: 8,
-    price: 20.00,
+    price: 25.00,
   },
   {
     id: 3,
@@ -210,7 +210,57 @@ export const categories = [
     image: "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     tastes: 3,
     size:12,
-    price: 20.00,
+    price: 30.00,
+  },
+  {
+    id: 4,
+    type: "drink_guarana",
+    title: "Guaraná Antártica",
+    description: "Guaraná Antártica de 1 ou 2 litros",
+    image: "https://img.freepik.com/fotos-premium/refrigerante-guarana-tipico-brasileiro-em-um-copo-com-gelo_92534-4018.jpg",
+    tastes: 3,
+    size:null,
+    price: 6.00,
+  },
+  {
+    id: 5,
+    type: "drink_pepsi",
+    title: "Pepsi",
+    description: "Pepsi de 1 ou 2 litros",
+    image: "https://img.freepik.com/free-photo/fresh-cola-drink-glass_144627-16198.jpg?t=st=1723832180~exp=1723835780~hmac=66873e06997400e68d9356b7f391887eb1f7825dbd01efc71c492d937ce7ca25&w=740",
+    tastes: 3,
+    size:null,
+    price: 6.00,
+  },
+  {
+    id: 6,
+    type: "drink_sukita",
+    title: "Sukita",
+    description: "Sukita de 1 ou 2 litros",
+    image: "https://img.freepik.com/free-photo/cold-grapefruit-juice_144627-2242.jpg?t=st=1723832075~exp=1723835675~hmac=4c95a1fc17165386017fa891d475e73c4fb0210d1653e921e7f6e8e452bb9c17&w=740",
+    tastes: 3,
+    size:null,
+    price: 6.00,
+  },
+  {
+    id: 7,
+    type: "drink_soda",
+    title: "Soda Limão",
+    description: "Soda Limão de 1 ou 2 litros",
+    image: "https://img.freepik.com/premium-photo/close-up-sparkling-mineral-water-with-lime-lemon_1263062-836.jpg?w=740",
+    tastes: 3,
+    size:null,
+    price: 6.00,
+  },
+  {
+    id: 7,
+    type: "drink_coke",
+    title: "Cola-Cola",
+    description: "Cola-Cola de 1 ou 2 litros",
+    image: "https://img.freepik.com/premium-photo/glass-cocacola-with-ice-closeup-generative-ai_446633-153891.jpg?w=740",
+    tastes: 3,
+    size:null,
+    price: 7.00,
   },
 ]
 
@@ -294,14 +344,12 @@ function App() {
       <Router>
           <main>
             <section>
-              <div className="container">
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/:id" element={<Item />} />
-                  <Route path="cart" element={<Cart />} />
-                  <Route path='contact/:number' element={<Contact />} />
-                </Routes>
-              </div>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/:id" element={<Item />} />
+                <Route path="cart" element={<Cart />} />
+                <Route path='contact/:number' element={<Contact />} />
+              </Routes>
             </section>
           </main>
       </Router>

@@ -12,83 +12,96 @@ export const Home = () => {
 
   return (
     <>
-      <div className="home">
-        <FloatButton badge={{ count: cart.length }} icon={<ShoppingCartOutlined />} onClick={() => navigate("/cart")}/>
-        <Tabs
-          // onChange={onChange}
-          type="card"
-          items=
-          {
-            [
-              {
-                label: "Todos",
-                key: "0",
-                children: (
-                  <div className="menu">
-                    <div className="card-container">
-                      {
-                        categories.map((item: any, index: number) => (            
-                          <Link className="card" key={index} to={`/${index}`}>
-                            <img src={item.image} alt={item.title} />
-                            <div className="card-content">
-                              <h4>{item.title}</h4>
-                              <p >{item.description}</p>
-                              <p className="price"> {currencyToString(item.price)}</p>
-                            </div>
-                          </Link>
-                        ))
-                      }
+      <picture className="home-pic">
+        <img className="logo" src={"/logo.jpg"} alt="" />
+      </picture>
+      <div className="container">
+        <div className="home">
+          <FloatButton badge={{ count: cart.length }} icon={<ShoppingCartOutlined />} onClick={() => navigate("/cart")}/>
+          <Tabs
+            // onChange={onChange}
+            type="card"
+            items=
+            {
+              [
+                {
+                  label: "Todos",
+                  key: "0",
+                  children: (
+                    <div className="menu">
+                      <div className="card-container">
+                        {
+                          categories.map((item: any, index: number) => (            
+                            <Link className="card" key={index} to={`/${index}`}>
+                              <img src={item.image} alt={item.title} />
+                              <div className="card-content">
+                                <h4>{item.title}</h4>
+                                <p >{item.description}</p>
+                                <p className="price"> {currencyToString(item.price)}</p>
+                              </div>
+                            </Link>
+                          ))
+                        }
+                      </div>
                     </div>
-                  </div>
-                ),
-              },
-              {
-                label: "Pizzas",
-                key: "1",
-                children: (
-                  <div className="menu">
-                    <div className="card-container">
-                      {
-                        categories.map((item: any, index: number) => (            
-                          <Link className="card" key={index} to={`/${index}`}>
-                            <img src={item.image} alt={item.title} />
-                            <div className="card-content">
-                              <h4>{item.title}</h4>
-                              <p >{item.description}</p>
-                              <p className="price"> {currencyToString(item.price)}</p>
-                            </div>
-                          </Link>
-                        ))
-                      }
+                  ),
+                },
+                {
+                  label: "Pizzas",
+                  key: "1",
+                  children: (
+                    <div className="menu">
+                      <div className="card-container">
+                        {
+                          categories.map((item: any, index: number) => 
+                            !item.type.includes("drink_")
+                            ? (
+                                <Link className="card" key={index} to={`/${index}`}>
+                                  <img src={item.image} alt={item.title} />
+                                  <div className="card-content">
+                                    <h4>{item.title}</h4>
+                                    <p >{item.description}</p>
+                                    <p className="price"> {currencyToString(item.price)}</p>
+                                  </div>
+                                </Link>
+                              )
+                            : null
+                        )
+                        }
+                      </div>
                     </div>
-                  </div>
-                ),
-              },
-              {
-                label: "Bebidas",
-                key: "2",
-                children: (
-                  <div className="menu">
-                    <div className="card-container">
-                      {
-                        categories.map((item: any, index: number) => (            
-                          <Link className="card" key={index} to={`/${index}`}>
-                            <img src={item.image} alt={item.title} />
-                            <div className="card-content">
-                              <h4>{item.title}</h4>
-                              <p >{item.description}</p>
-                              <p className="price"> {currencyToString(item.price)}</p>
-                            </div>
-                          </Link>
-                        ))
-                      }
+                  ),
+                },
+                {
+                  label: "Bebidas",
+                  key: "2",
+                  children: (
+                    <div className="menu">
+                      <div className="card-container">
+                        {
+                          categories.map((item: any, index: number) => 
+                            item.type.includes("drink_")
+                            ? (            
+                                <Link className="card" key={index} to={`/${index}`}>
+                                  <img src={item.image} alt={item.title} />
+                                  <div className="card-content">
+                                    <h4>{item.title}</h4>
+                                    <p >{item.description}</p>
+                                    <p className="price"> {currencyToString(item.price)}</p>
+                                  </div>
+                                </Link>
+                              )
+                            : null
+                          )
+                        }
+                      </div>
                     </div>
-                  </div>
-                ),
-              },
-            ]
-          }
-        />
+                  ),
+                },
+              ]
+            }
+          />
+        </div>
       </div>
     </>
   )

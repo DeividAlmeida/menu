@@ -110,7 +110,7 @@ export const Item = () => {
         <>
           <Button>
             <Link to={"/"}>
-              Não
+              Voltar
             </Link>
           </Button>
           <CancelBtn />
@@ -121,7 +121,7 @@ export const Item = () => {
   };
 
   return (
-    <div key={key}>
+    <div key={key} className="container">
       <FloatButton badge={{ count: cart.length }} icon={<ShoppingCartOutlined />} onClick={() => navigate("/cart")}/>
       {contextModalHolder}
       <picture>

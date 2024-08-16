@@ -13,8 +13,7 @@ export const Cart = () => {
   const { cart } = useContext(CartContext) as CartContextType;
   
   return (
-    <>
-      
+    <div className="container">
       <div className="back-box">
         <Link to="/" className="back">
           <ArrowLeftOutlined />
@@ -33,6 +32,6 @@ export const Cart = () => {
         })
       }
       <CartForm />
-    </>
+    </div>
   );
 }
