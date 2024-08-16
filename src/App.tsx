@@ -1,6 +1,7 @@
 import { useState, createContext } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-router-dom";
+import { FloatButton } from 'antd';
 import { Home } from "./home/home";
 import { Item } from "./detail/item";
 import { Cart } from "./cart/cart";
@@ -8,6 +9,7 @@ import { CartContextType, Cart as CartType, IItem} from "./types/cart";
 import { Order } from "./myOrder/myOrder"
 import { Calculator } from './utils/calculator';
 import { Contact } from './contact/contact';
+import { ShoppingCartOutlined } from '@ant-design/icons';
 
 export const allItems: IItem[] = [
   {
@@ -279,6 +281,7 @@ function App() {
   const [cart, setCart] = useState<CartType[]>([]);
   const [total, setTotal] = useState<number>(0);
   const [discount, setDiscount] = useState<number>(0);
+
   const addOrder = (cart: CartType[], new_discount?: number) => {     
     setCart(cart)
     const calc = new Calculator(cart).calcTotal();
@@ -296,7 +299,6 @@ function App() {
                   <Route path="/" element={<Home />} />
                   <Route path="/:id" element={<Item />} />
                   <Route path="cart" element={<Cart />} />
-                  <Route path='my-order' element={<Order />} />
                   <Route path='contact/:number' element={<Contact />} />
                 </Routes>
               </div>

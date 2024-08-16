@@ -326,3 +326,8 @@ summary {
   border-color: #00c700 !important;
   background: #ffffff !important;
 }
+
+.ant-float-btn {
+  inset-block-end: auto !important;
+  inset-block-start: 30px !important;
+}

@@ -6,8 +6,8 @@ import { currencyToString } from "../utils/index";
 import { Calculator } from "../utils/calculator";
 import { CartContextType, IItem } from "../types/cart";
 import { ItemInfo } from "./item_info";
-import { Button, Modal } from 'antd';
-import { ArrowLeftOutlined } from "@ant-design/icons";
+import { Button, FloatButton, Modal } from 'antd';
+import { ArrowLeftOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 
 
 export const Item = () => {
@@ -99,8 +99,8 @@ export const Item = () => {
 
   const sucess_modal = () => {
     modal.success({
-      title: 'Item adicionado',
-      content: (<p>Item adicionado ao Carrinho!!</p>),
+      title: 'Item adicionado ao Carrinho!!',
+      content: (<p>Deseja finalizar o pedido?</p>),
       okText: "Finalizar Pedido",
       onOk: () => {
         navigate("/cart");
@@ -110,7 +110,7 @@ export const Item = () => {
         <>
           <Button>
             <Link to={"/"}>
-              Continuar Comprando
+              Não
             </Link>
           </Button>
           <CancelBtn />
@@ -122,6 +122,7 @@ export const Item = () => {
 
   return (
     <div key={key}>
+      <FloatButton badge={{ count: cart.length }} icon={<ShoppingCartOutlined />} onClick={() => navigate("/cart")}/>
       {contextModalHolder}
       <picture>
       <div className="control" >
