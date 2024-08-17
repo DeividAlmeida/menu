@@ -5,6 +5,7 @@ import { CartContextType } from "../types/cart";
 import { currencyToString } from "../utils";
 import { DiscountCoupon } from "./discount_coupon";
 import { Modal, Input, message as alert } from 'antd';
+import InputMask from "react-input-mask";
 import { Message } from "../utils/message";
 import { LoadingOutlined } from "@ant-design/icons";
 
@@ -16,7 +17,7 @@ export const CartForm = () => {
   const {cart, discount, total, addOrder } = useContext(CartContext) as CartContextType;
   const [alertApi, contextHolder] = alert.useMessage();
   const [modal, contextModalHolder] = Modal.useModal();
-  const navigate = useNavigate();  
+  const navigate = useNavigate();
 
   const sucess_modal = (number: string) => {
     modal.success({
@@ -82,13 +83,6 @@ export const CartForm = () => {
     );
   }
 
-  const get_number = (value: string) => {
-    if (value) {
-      setNumber(value);
-    }
-    return value
-  } 
-
   return (
     <>
       {contextHolder}
@@ -100,19 +94,22 @@ export const CartForm = () => {
 
             <div className="cart-form-column">
               <label className="form-lable">Número do Whatsapp: </label>
-              <Input.OTP
-                status={number_error ? "error" : ""}
-                value={number}
-                length={11} 
-                style={{marginTop: "8px"}} 
-                formatter={get_number} 
+              <InputMask
+                name="phone"
+                required
+                type="tel"
+                mask="(99) 99999-9999"
+                maskChar={"_"}
+                alwaysShowMask={true}
+                onChange={(event) =>{
+                  setNumber(event.target.value = event.target.value.replace(/\D/g, ""))}
+                } 
               />
               {
                 number_error ? 
-                  <small className="form-helper">Número inválido. Adicione o DDD + 9 + Número</small>:
+                  <small className="form-helper">Número inválido. Adicione o DDD + Número</small>:
                   null
               }
-              <input className="form-field" type="hidden" name="phone" value={number} required />
             </div>
 
             <div className="cart-form-column">
