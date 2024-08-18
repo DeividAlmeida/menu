@@ -150,7 +150,7 @@ export const CartForm = () => {
               > 
                 <option value="" hidden>Selecione uma opção</option>
                 <option value="0">Sim</option>
-                <option value="5">Não</option>
+                <option value="3">Não</option>
               </select>
             </div>
             <div className="cart-form-column" id="complement">

@@ -2,109 +2,245 @@
   {
     "id": 0,
     "type": "pizza",
-    "title": "Gourmet Burger",
-    "description": "Calabresa Acebolada",
+    "title": "Calabresa Acebolada",
+    "description": "Muçarela, calabresa, cebola, azeitona, e orégano.",
     "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     "price": 5.00
   },
   {
     "id": 1,
     "type": "pizza",
-    "title": "Luzense",
-    "description": "Indulge in a classic Italian pasta dish, perfect for any occasion.",
+    "title": "Mussarela com Cheddar",
+    "description": "Muçarela, cheddar, azeitona, e orégano.",
     "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     "price": 0.00
   },
   {
     "id": 2,
     "type": "pizza",
-    "title": "Gourmet Burger",
-    "description": "Calabresa Acebolada",
+    "title": "Mussarela com Catupiry",
+    "description": "Muçarela, catupiry, azeitona, e orégano.",
     "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     "price": 0.00
   },
   {
     "id": 3,
     "type": "pizza",
-    "title": "Gourmet Burger",
-    "description": "Calabresa Acebolada",
+    "title": "Á Moda",
+    "description": "Muçarela, presunto, calabresa triturada, milho, azeitona, e orégano.",
     "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
-    "price": 5.00
+    "price": 0.00
   },
   {
     "id": 4,
     "type": "pizza",
-    "title": "Gourmet Burger",
-    "description": "Calabresa Acebolada",
+    "title": "Frango",
+    "description": "Muçarela, frango desfiado, azeitona, e orégano.",
     "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
-    "price": 5.00
+    "price": 0.00
   },
   {
     "id": 5,
     "type": "pizza",
-    "title": "Gourmet Burger",
-    "description": "Calabresa Acebolada",
+    "title": "Milho Verde",
+    "description": "Muçarela, milho verde, azeitona, e orégano.",
     "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
-    "price": 5.00
+    "price": 0.00
   },
   {
     "id": 6,
     "type": "pizza",
-    "title": "Gourmet Burger",
-    "description": "Calabresa Acebolada",
+    "title": "Presunto",
+    "description": "Muçarela, presunto, azeitona, e orégano.",
     "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
     "price": 0.00
   },
   {
     "id": 7,
     "type": "pizza",
-    "title": "Gourmet Burger",
-    "description": "Calabresa Acebolada",
+    "title": "Mexicana",
+    "description": "Muçarela, presunto, milho verde, azeitona, e orégano.",
     "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
-    "price": 5.00
+    "price": 0.00
   },
   {
     "id": 8,
     "type": "pizza",
-    "title": "Gourmet Burger",
-    "description": "Calabresa Acebolada",
+    "title": "Portuguesa",
+    "description": "Muçarela, presunto, milho verde, ovo, cebola, azeitona, e orégano.",
     "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
-    "price": 5.00
+    "price": 0.00
   },
   {
     "id": 9,
     "type": "pizza",
-    "title": "Gourmet Burger",
-    "description": "Calabresa Acebolada",
+    "title": "Margherita",
+    "description": "Muçarela, tomate, manjericão, azeitona, e orégano.",
     "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
-    "price": 5.00
+    "price": 0.00
   },
   {
     "id": 10,
     "type": "pizza",
-    "title": "Gourmet Burger",
-    "description": "Calabresa Acebolada",
+    "title": "Baiana",
+    "description": "Muçarela, calabresa triturada, pimenta, ovo, azeitona, e orégano.",
     "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
-    "price": 5.00
+    "price": 0.00
   },
   {
     "id": 11,
     "type": "pizza",
-    "title": "Luzense",
-    "description": "Indulge in a classic Italian pasta dish, perfect for any occasion.",
+    "title": "Toscana",
+    "description": "Muçarela, calabresa triturada, azeitona, e orégano.",
     "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
-    "price": 5.00
+    "price": 0.00
   },
   {
     "id": 12,
     "type": "pizza",
-    "title": "Luzense",
-    "description": "Indulge in a classic Italian pasta dish, perfect for any occasion.",
+    "title": "Caipira",
+    "description": "Muçarela, frango desfiado, catupiry, milho verde, azeitona, e orégano.",
     "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
-    "price": 5.00
+    "price": 0.00
   },
   {
     "id": 13,
+    "type": "pizza",
+    "title": "Frango com Catupiry",
+    "description": "Muçarela, frango desfiado, catupiry, azeitona, e orégano.",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 0.00
+  },
+  {
+    "id": 14,
+    "type": "pizza",
+    "title": "Frango com Cheddar",
+    "description": "Muçarela, frango desfiado, cheddar, azeitona, e orégano.",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 0.00
+  },
+  {
+    "id": 15,
+    "type": "pizza",
+    "title": "Frango Crocante",
+    "description": "Muçarela, frango desfiado, batata palha, azeitona, e orégano.",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 0.00
+  },
+  {
+    "id": 16,
+    "type": "pizza",
+    "title": "Três Queijos",
+    "description": "Muçarela, cheddar, catupiry, azeitona, e orégano.",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 0.00
+  },
+  {
+    "id": 17,
+    "type": "pizza",
+    "title": "Calabresa com Cheddar",
+    "description": "Muçarela, calabresa, cheddar, azeitona, e orégano.",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 0.00
+  },
+  {
+    "id": 18,
+    "type": "pizza",
+    "title": "Calabresa com Catupiry",
+    "description": "Muçarela, calabresa, catupiry, azeitona, e orégano.",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 0.00
+  },
+  {
+    "id": 19,
+    "type": "pizza",
+    "title": "Calabresa com Banana",
+    "description": "Muçarela, calabresa, banana, azeitona, e orégano.",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 0.00
+  },
+  {
+    "id": 20,
+    "type": "pizza",
+    "title": "Bacon",
+    "description": "Muçarela, bacon, azeitona, e orégano.",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 0.00
+  },
+  {
+    "id": 21,
+    "type": "pizza",
+    "title": "Salame",
+    "description": "Muçarela, salame, cebola, azeitona, e orégano.",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 2.00
+  },
+  {
+    "id": 22,
+    "type": "pizza",
+    "title": "Peperoni",
+    "description": "Muçarela, peperone, cebola, azeitona, e orégano.",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 2.00
+  },
+  {
+    "id": 23,
+    "type": "pizza",
+    "title": "Atum",
+    "description": "Muçarela, atum, cebola, azeitona, e orégano.",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 2.00
+  },
+  {
+    "id": 24,
+    "type": "pizza",
+    "title": "Gui Predilecta",
+    "description": "Muçarela, calabresa triturada, lombo, bacon, cheddar, e catupiry.",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 2.00
+  },
+  {
+    "id": 25,
+    "type": "pizza",
+    "title": "Lombo",
+    "description": "Muçarela, lombo, cebola, azeitona, e orégano.",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 2.00
+  },
+  {
+    "id": 26,
+    "type": "pizza",
+    "title": "Carne Seca",
+    "description": "Muçarela, carne seca, cebola, azeitona, e orégano.",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 2.00
+  },
+  {
+    "id": 27,
+    "type": "pizza",
+    "title": "Luzence",
+    "description": "Muçarela, carne seca, banana, azeitona, e orégano.",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 2.00
+  },
+  {
+    "id": 28,
+    "type": "pizza",
+    "title": "Atun com Catupiry",
+    "description": "Muçarela, atum, catupiry, azeitona, e orégano.",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 2.00
+  },
+  {
+    "id": 29,
+    "type": "pizza",
+    "title": "Palmito",
+    "description": "Muçarela, calabresa triturada, cebola, azeitona, e orégano.",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 2.00
+  },
+  {
+    "id": 30,
     "type": "drink_coca",
     "title": "Coca-Cola 1L",
     "description": "Coca-Cola de 1L",
@@ -112,7 +248,7 @@
     "price": 0.00
   },
   {
-    "id": 14,
+    "id": 31,
     "type": "drink-coca",
     "title": "Coca-Cola 2L",
     "description": "Coca-Cola de 2L",
@@ -120,7 +256,7 @@
     "price": 5.00
   },
   {
-    "id": 15,
+    "id": 32,
     "type": "drink_pepsi",
     "title": "Pepsi 1L",
     "description": "Refrigerante de 1L",
@@ -128,7 +264,7 @@
     "price": 0.00
   },
   {
-    "id": 16,
+    "id": 33,
     "type": "drink_pepsi",
     "title": "Pepsi 2L",
     "description": "Refrigerante de 2L",
@@ -136,7 +272,7 @@
     "price": 4.00
   },
   {
-    "id": 17,
+    "id": 34,
     "type": "drink_sukita",
     "title": "Sukita 1L",
     "description": "Refrigerante de 1L",
@@ -144,7 +280,7 @@
     "price": 0.00
   },
   {
-    "id": 18,
+    "id": 35,
     "type": "drink_sukita",
     "title": "Sukita 2L",
     "description": "Refrigerante de 2L",
@@ -152,7 +288,7 @@
     "price": 2.00
   },
   {
-    "id": 19,
+    "id": 36,
     "type": "drink_guarana",
     "title": "Guaraná Antártica 1L",
     "description": "Refrigerante de 1L",
@@ -160,7 +296,7 @@
     "price": 0.00
   },
   {
-    "id": 20,
+    "id": 37,
     "type": "drink_guarana",
     "title": "Guaraná Antártica 2L",
     "description": "Refrigerante de 2L",
@@ -168,7 +304,7 @@
     "price": 4.00
   },
   {
-    "id": 21,
+    "id": 38,
     "type": "drink_soda",
     "title": "Soda Limão 1L",
     "description": "Refrigerante de 1L",
