@@ -1,5 +1,7 @@
 import { currencyToString } from ".";
-import { allItems, border, categories } from "../App";
+import categories from "../models/categories.json";
+import items from "../models/items.json";
+import borders from "../models/borders.json";
 import { Cart } from "../types/cart";
 
 export class Message {
@@ -60,7 +62,7 @@ export class Message {
 
   private get order_detail(): string { 
     return this.cart.map((item:Cart, index)=>{
-      return `➤ *${categories[item.type].title}:* ${item.tastes.map((taste: number) => `\\n   ● ${allItems[taste].title}`).join(", ")} ${item.border? `\\n   *Borda:*  ${border[item.border].description}` : ""}  \\n   *Sub-total:* ${currencyToString(item.sub_total)}`
+      return `➤ *${categories[item.type].title}:* ${item.tastes.map((taste: number) => `\\n   ● ${items[taste].title}`).join(", ")} ${item.border? `\\n   *Borda:*  ${borders[item.border].description}` : ""}  \\n   *Sub-total:* ${currencyToString(item.sub_total)}`
     }).join("\\n \\n");
   }
 

@@ -1,0 +1,178 @@
+[
+  {
+    "id": 0,
+    "type": "pizza",
+    "title": "Gourmet Burger",
+    "description": "Calabresa Acebolada",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 5.00
+  },
+  {
+    "id": 1,
+    "type": "pizza",
+    "title": "Luzense",
+    "description": "Indulge in a classic Italian pasta dish, perfect for any occasion.",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 0.00
+  },
+  {
+    "id": 2,
+    "type": "pizza",
+    "title": "Gourmet Burger",
+    "description": "Calabresa Acebolada",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 0.00
+  },
+  {
+    "id": 3,
+    "type": "pizza",
+    "title": "Gourmet Burger",
+    "description": "Calabresa Acebolada",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 5.00
+  },
+  {
+    "id": 4,
+    "type": "pizza",
+    "title": "Gourmet Burger",
+    "description": "Calabresa Acebolada",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 5.00
+  },
+  {
+    "id": 5,
+    "type": "pizza",
+    "title": "Gourmet Burger",
+    "description": "Calabresa Acebolada",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 5.00
+  },
+  {
+    "id": 6,
+    "type": "pizza",
+    "title": "Gourmet Burger",
+    "description": "Calabresa Acebolada",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 0.00
+  },
+  {
+    "id": 7,
+    "type": "pizza",
+    "title": "Gourmet Burger",
+    "description": "Calabresa Acebolada",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 5.00
+  },
+  {
+    "id": 8,
+    "type": "pizza",
+    "title": "Gourmet Burger",
+    "description": "Calabresa Acebolada",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 5.00
+  },
+  {
+    "id": 9,
+    "type": "pizza",
+    "title": "Gourmet Burger",
+    "description": "Calabresa Acebolada",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 5.00
+  },
+  {
+    "id": 10,
+    "type": "pizza",
+    "title": "Gourmet Burger",
+    "description": "Calabresa Acebolada",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 5.00
+  },
+  {
+    "id": 11,
+    "type": "pizza",
+    "title": "Luzense",
+    "description": "Indulge in a classic Italian pasta dish, perfect for any occasion.",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 5.00
+  },
+  {
+    "id": 12,
+    "type": "pizza",
+    "title": "Luzense",
+    "description": "Indulge in a classic Italian pasta dish, perfect for any occasion.",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 5.00
+  },
+  {
+    "id": 13,
+    "type": "drink_coca",
+    "title": "Coca-Cola 1L",
+    "description": "Coca-Cola de 1L",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 0.00
+  },
+  {
+    "id": 14,
+    "type": "drink-coca",
+    "title": "Coca-Cola 2L",
+    "description": "Coca-Cola de 2L",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 5.00
+  },
+  {
+    "id": 15,
+    "type": "drink_pepsi",
+    "title": "Pepsi 1L",
+    "description": "Refrigerante de 1L",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 0.00
+  },
+  {
+    "id": 16,
+    "type": "drink_pepsi",
+    "title": "Pepsi 2L",
+    "description": "Refrigerante de 2L",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 4.00
+  },
+  {
+    "id": 17,
+    "type": "drink_sukita",
+    "title": "Sukita 1L",
+    "description": "Refrigerante de 1L",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 0.00
+  },
+  {
+    "id": 18,
+    "type": "drink_sukita",
+    "title": "Sukita 2L",
+    "description": "Refrigerante de 2L",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 2.00
+  },
+  {
+    "id": 19,
+    "type": "drink_guarana",
+    "title": "Guaraná Antártica 1L",
+    "description": "Refrigerante de 1L",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 0.00
+  },
+  {
+    "id": 20,
+    "type": "drink_guarana",
+    "title": "Guaraná Antártica 2L",
+    "description": "Refrigerante de 2L",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 4.00
+  },
+  {
+    "id": 21,
+    "type": "drink_soda",
+    "title": "Soda Limão 1L",
+    "description": "Refrigerante de 1L",
+    "image": "https://img.freepik.com/free-photo/pepperoni-pizza-with-olives-wooden-board_140725-5374.jpg?t=st=1717086846~exp=1717090446~hmac=069b7adc9a0c9955a2d53207a67ca63d6cfceb78e8f21904d93bfe507dbdbd7f&w=740",
+    "price": 0.00
+  }
+]

@@ -1,5 +1,6 @@
-import { useState, useContext } from 'react';
-import { allItems, categories, CartContext } from "../App";
+import { useContext } from 'react';
+import { CartContext } from "../App";
+import categories from "../models/categories.json";
 import './home.css';
 import { currencyToString } from '../utils';
 import { FloatButton, Tabs } from 'antd';
@@ -32,7 +33,7 @@ export const Home = () => {
                       <div className="card-container">
                         {
                           categories.map((item: any, index: number) => (            
-                            <Link className="card" key={index} to={`/${index}`}>
+                            <Link className="card" key={index} to={`/${item.type}/${index}`}>
                               <img src={item.image} alt={item.title} />
                               <div className="card-content">
                                 <h4>{item.title}</h4>
@@ -54,9 +55,9 @@ export const Home = () => {
                       <div className="card-container">
                         {
                           categories.map((item: any, index: number) => 
-                            !item.type.includes("drink_")
+                            item.type.includes("pizza")
                             ? (
-                                <Link className="card" key={index} to={`/${index}`}>
+                                <Link className="card" key={index} to={`/${item.type}/${index}`}>
                                   <img src={item.image} alt={item.title} />
                                   <div className="card-content">
                                     <h4>{item.title}</h4>
@@ -80,9 +81,9 @@ export const Home = () => {
                       <div className="card-container">
                         {
                           categories.map((item: any, index: number) => 
-                            item.type.includes("drink_")
+                            item.type.includes("drink")
                             ? (            
-                                <Link className="card" key={index} to={`/${index}`}>
+                                <Link className="card" key={index} to={`/${item.type}/${index}`}>
                                   <img src={item.image} alt={item.title} />
                                   <div className="card-content">
                                     <h4>{item.title}</h4>

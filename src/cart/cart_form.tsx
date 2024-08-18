@@ -4,7 +4,7 @@ import { CartContext, valid_ddds } from "../App";
 import { CartContextType } from "../types/cart";
 import { currencyToString } from "../utils";
 import { DiscountCoupon } from "./discount_coupon";
-import { Modal, Input, message as alert } from 'antd';
+import { Modal, message as alert } from 'antd';
 import InputMask from "react-input-mask";
 import { Message } from "../utils/message";
 import { LoadingOutlined } from "@ant-design/icons";

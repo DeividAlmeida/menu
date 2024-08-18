@@ -1,0 +1,27 @@
+[
+  {
+    "key": 0,
+    "description": "Cheddar",
+    "price": 5.00
+  },
+  {
+    "key": 1,
+    "description": "Catupiry",
+    "price": 5.00
+  },
+  {
+    "key": 2,
+    "description": "Mussarela",
+    "price": 5.00
+  },
+  {
+    "key": 3,
+    "description": "Brigadeiro",
+    "price": 5.00
+  },
+  {
+    "key": 4,
+    "description": "Doce de leite",
+    "price": 5.00
+  }
+]

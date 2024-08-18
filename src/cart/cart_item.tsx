@@ -1,8 +1,13 @@
 import { useContext, useState } from "react";
 import { Cart, CartContextType } from "../types/cart";
-import { allItems, border, CartContext, categories } from "../App";
+import categories from "../models/categories.json";
+import items from "../models/items.json";
+import borders from "../models/borders.json";
 import { Calculator } from "../utils/calculator";
 import { currencyToString } from "../utils";
+import { CartContext } from "../App";
+import { DeleteOutlined } from "@ant-design/icons";
+import { Popconfirm } from "antd";
 
 type PropsType = {
   item: Cart;
@@ -40,10 +45,19 @@ export const CartItem = ({ item, index }: PropsType) => {
     <>
       <details className="cart-box" open key={key}>
         <summary className="item-header">
-            <button className="danger" onClick={removeItem(index)}>
-              <i className="fa-solid fa-trash"></i>
+          <Popconfirm
+            title="Remover item"
+            description="Deseja realmente remover este item?"
+            onConfirm={removeItem(index)}
+            onCancel={void 0}
+            okText="Sim"
+            cancelText="Não"
+          >
+            <button className="danger">
+              <DeleteOutlined />
             </button>
-            <h2 className="item-name">{categories[item.type].title}</h2>
+          </Popconfirm>
+          <h2 className="item-name">{categories[item.type].title}</h2>
         </summary>
         <div className="item-body">
           <div className="content">
@@ -51,12 +65,22 @@ export const CartItem = ({ item, index }: PropsType) => {
               item.tastes.map((taste, taste_index) => {
                 return (
                   <div className="item-info" key={`t-${index}${taste_index}`}>
-                    <p className="item-taste">{allItems[taste].title}</p>
+                    <p className="item-taste">{items[taste].title}</p>
                     {
                       item.tastes.length > 1 ?
-                      <p className="item-remove" onClick={removeTaste(index, taste_index)}>
-                        <i className="fa-solid fa-xmark"></i>
-                      </p>: null
+                      <Popconfirm
+                        title="Remover item"
+                        description="Deseja realmente remover este item?"
+                        onConfirm={removeTaste(index, taste_index)}
+                        onCancel={void 0}
+                        okText="Sim"
+                        cancelText="Não"
+                      >
+                        <p className="item-remove" >
+                          <DeleteOutlined />
+                        </p>
+                      </Popconfirm>
+                      : null
                     }
                   </div>
                 )
@@ -65,20 +89,30 @@ export const CartItem = ({ item, index }: PropsType) => {
           </div>
         </div>
         {
-          item.border ?
-          <div className="item-footer" key={`b-${index}`}>
-            <div className="content">
-              <div className="item-info">
-                <p className="item-complement">
-                  {border[item.border].description}
-                  <i className="item-complement-price"> - {currencyToString(border[item.border].price)}</i>
-                </p>
-                  <p className="item-remove" onClick={removeBorder(index)}>
-                    <i className="fa-solid fa-xmark" />
+          item.border !== undefined
+            ?<div className="item-footer" key={`b-${index}`}>
+              <div className="content">
+                <div className="item-info">
+                  <p className="item-complement">
+                    {borders[item.border].description}
+                    <i className="item-complement-price"> - {currencyToString(borders[item.border].price)}</i>
                   </p>
+                  <Popconfirm
+                    title="Remover item"
+                    description="Deseja realmente remover este item?"
+                    onConfirm={removeBorder(index)}
+                    onCancel={void 0}
+                    okText="Sim"
+                    cancelText="Não"
+                  >
+                    <p className="item-remove" >
+                      <DeleteOutlined />
+                    </p>
+                  </Popconfirm>
+                </div>
               </div>
             </div>
-          </div>: null
+            : null
         }
       </details>
       <div className="sub-total">

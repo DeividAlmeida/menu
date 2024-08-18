@@ -1,6 +1,8 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from 'react';
-import { allItems, border, categories, CartContext } from "../App";
+import categories from "../models/categories.json";
+import all_items from "../models/items.json";
+import borders from "../models/borders.json";
 import "./item.css";
 import { currencyToString } from "../utils/index";
 import { Calculator } from "../utils/calculator";
@@ -8,21 +10,23 @@ import { CartContextType, IItem } from "../types/cart";
 import { ItemInfo } from "./item_info";
 import { Button, FloatButton, Modal } from 'antd';
 import { ArrowLeftOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import { CartContext } from "../App";
 
 
 export const Item = () => {
-  const [filteredItems, setFilteredItems] = useState(allItems);
+  const { id, category } = useParams();
+  const index = id ? parseInt(id) : 0;
+  const category_type = category?? "pizza";
+  const item = categories[index];
+  const items = all_items.filter((item) => item.type === category_type);
+  const [filteredItems, setFilteredItems] = useState(items);
   const [adicional_price, setAdicionalPrice] = useState(0);
-  const [key, setKey] = useState(0);
   const [tastesState, setTastesState] = useState(false);
   const [tastes, setTastes] = useState<number[]>([]);
   const [selectedBorder, setSelectedBorder] = useState<number>();
   const [modal, contextModalHolder] = Modal.useModal();
   const navigate = useNavigate();  
 
-  const { id } = useParams();
-  const index = id ? parseInt(id) : 0;
-  const item = categories[index];
 
   useEffect(() => {
     setTastesState(item.tastes <= tastes.length) 
@@ -87,7 +91,7 @@ export const Item = () => {
   function searchItem(event: React.ChangeEvent<HTMLInputElement>) {
     const query = event.target.value;
     setFilteredItems(
-      allItems.filter(item => {
+      items.filter(item => {
         if( tastes.includes(item.id)) {
           return true;
         } else {
@@ -121,7 +125,7 @@ export const Item = () => {
   };
 
   return (
-    <div key={key} className="container">
+    <div className="container">
       <FloatButton badge={{ count: cart.length }} icon={<ShoppingCartOutlined />} onClick={() => navigate("/cart")}/>
       {contextModalHolder}
       <picture>
@@ -181,45 +185,49 @@ export const Item = () => {
             </div>
           </div>
         </details>
-        <details className="item-size-box" >
-          <summary className="item-header item-size-header">
-            <h2 className="item-type-info">Opcional</h2>
-            <h2 className="item-name item-size-name" style={{width: "33%"}}>Borda</h2>
-          </summary>
-          <div className="item-body">
-            <div className="content">
-              {
-                border.map((item, index) => {
-                  return (
-                    <label
-                      htmlFor={"b"+item.key}
-                      className={`item-info size-body-box 
-                        ${selectedBorder !== undefined && selectedBorder !== item.key
-                          ? "disactive"
-                          : "active"}`
-                      }
-                      key={index}
-                    >
-                      <div className="title-subtitle-box">
-                        <div className="check-title" style={{color: "black"}}>{item.description}</div>
-                        <div className="price" style={{color: "red"}}>
-                          + {
-                            currencyToString(item.price)
+        {
+          category_type === "pizza"? (
+            <details className="item-size-box" >
+              <summary className="item-header item-size-header">
+                <h2 className="item-type-info">Opcional</h2>
+                <h2 className="item-name item-size-name" style={{width: "33%"}}>Borda</h2>
+              </summary>
+              <div className="item-body">
+                <div className="content">
+                  {
+                    borders.map((item, index) => {
+                      return (
+                        <label
+                          htmlFor={"b"+item.key}
+                          className={`item-info size-body-box 
+                            ${selectedBorder !== undefined && selectedBorder !== item.key
+                              ? "disactive"
+                              : "active"}`
                           }
-                        </div>
-                      </div>
-                      <p className="border-input">
-                        <input disabled={selectedBorder !== undefined && selectedBorder !== item.key } type="checkbox" id={"b"+item.key} name="border" onChange={(e)=> addBorder(e.target.checked, item) }/>
-                        <label htmlFor={"b"+item.key}></label>
-                      </p>
-                    </label>
-                  )
-                })
-              }
-
-            </div>
-          </div>
-        </details>
+                          key={index}
+                        >
+                          <div className="title-subtitle-box">
+                            <div className="check-title" style={{color: "black"}}>{item.description}</div>
+                            <div className="price" style={{color: "red"}}>
+                              + {
+                                currencyToString(item.price)
+                              }
+                            </div>
+                          </div>
+                          <p className="border-input">
+                            <input disabled={selectedBorder !== undefined && selectedBorder !== item.key } type="checkbox" id={"b"+item.key} name="border" onChange={(e)=> addBorder(e.target.checked, item) }/>
+                            <label htmlFor={"b"+item.key}></label>
+                          </p>
+                        </label>
+                      )
+                    })
+                  }
+    
+                </div>
+              </div>
+            </details>
+          ) : null
+        }
       </div>
 
       <footer style={{height: "75px", backgroundColor: "#fff"}}></footer>
@@ -232,12 +240,6 @@ export const Item = () => {
           Adicionar
           <b>{ " " + currencyToString(subTotal() + total)}</b>
         </button>
-        {/* <Link 
-          to="/cart"
-          className="order-button" 
-        >
-          <center>Ver Pedido <i className="fa fa-shopping-cart" aria-hidden="true"></i></center> 
-        </Link> */}
         
       </div>
     </div>
