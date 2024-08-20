@@ -24,6 +24,7 @@ export const CartForm = () => {
       title: 'Pedido enviado com sucesso !!',
       content: (<p>Você receberá uma mensagem de confirmação do seu pedido em instantes no whatsapp <b>{number}</b></p>),
       onOk: () => {
+        addOrder([]);
         navigate("/");
       },
       styles: {}
@@ -64,7 +65,6 @@ export const CartForm = () => {
       alertApi.destroy();
       sucess_modal(number);
       
-      addOrder([]);
       setDisabled(false);     
     } catch (error) {
 
