@@ -13,6 +13,7 @@ export const CartForm = () => {
   const [number, setNumber] = useState("");
   const [delivery_fee, setDeliveryFee] = useState<number>(0);
   const [number_error, setNumberError] = useState(false);
+  const [error_info, setErrorInfo] = useState("");
   const [disabled, setDisabled] = useState<boolean>(false);
   const {cart, discount, total, addOrder } = useContext(CartContext) as CartContextType;
   const [alertApi, contextHolder] = alert.useMessage();
@@ -76,11 +77,16 @@ export const CartForm = () => {
 
   const number_validation = () => {
     const ddd = number.substring(0, 2);
+    const number_length = number.length !== 11;
+    const right_ddd = !valid_ddds.includes(ddd);
+    const third_number = number[2] !== "9";
     setNumberError(
-      !(/^\d{11}$/.test(number) 
-      && valid_ddds.includes(ddd) 
-      && number[2] === "9")
-    );
+      number_length
+      || right_ddd 
+      || third_number );
+    if (number_length) return setErrorInfo("O número deve conter 11 dígitos");
+    if (right_ddd) return setErrorInfo("DDD inválido");
+    if (third_number) return setErrorInfo("Após o DDD o número deve começar com 9");
   }
 
   return (
@@ -99,15 +105,16 @@ export const CartForm = () => {
                 required
                 type="tel"
                 mask="(99) 99999-9999"
+                placeholder="Adicione o DDD + Número"
                 maskChar={"_"}
-                alwaysShowMask={true}
+                alwaysShowMask={false}
                 onChange={(event) =>{
                   setNumber(event.target.value = event.target.value.replace(/\D/g, ""))}
                 } 
               />
               {
                 number_error ? 
-                  <small className="form-helper">Número inválido. Adicione o DDD + Número</small>:
+                  <small className="form-helper">Número inválido. <b>{error_info}</b></small>:
                   null
               }
             </div>

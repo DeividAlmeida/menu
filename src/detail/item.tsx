@@ -1,5 +1,5 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from "react";
 import categories from "../models/categories.json";
 import all_items from "../models/items.json";
 import borders from "../models/borders.json";
@@ -8,7 +8,7 @@ import { currencyToString } from "../utils/index";
 import { Calculator } from "../utils/calculator";
 import { CartContextType, IItem } from "../types/cart";
 import { ItemInfo } from "./item_info";
-import { Button, FloatButton, Modal } from 'antd';
+import { Button, FloatButton, Modal } from "antd";
 import { ArrowLeftOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { CartContext } from "../App";
 
@@ -26,15 +26,13 @@ export const Item = () => {
   const [selectedBorder, setSelectedBorder] = useState<number>();
   const [modal, contextModalHolder] = Modal.useModal();
   const navigate = useNavigate();  
-
+  const { cart, total, addOrder } = useContext(CartContext) as CartContextType;
 
   useEffect(() => {
     setTastesState(item.tastes <= tastes.length) 
   }, [item.tastes, tastes]);
   
-  const { cart, total, addOrder } = useContext(CartContext) as CartContextType;
   const addCart = () =>  {
-    
     addOrder([
       ...cart??[],
       {
@@ -103,7 +101,7 @@ export const Item = () => {
 
   const sucess_modal = () => {
     modal.success({
-      title: 'Item adicionado ao Carrinho!!',
+      title: "Adicionado ao Carrinho!!",
       content: (<p>Deseja finalizar o pedido?</p>),
       okText: "Finalizar Pedido",
       onOk: () => {
@@ -124,9 +122,46 @@ export const Item = () => {
     });
   };
 
+  const warning_modal = () => {
+    modal.warning({
+      title: "Esse item não foi adicionado ao carrinho!!",
+      content: (<p>Deseja adicionar ao carrinho antes de finalizar o pedido?</p>),
+      okText: "Adicionar",
+      onOk: () => {
+        addOrder([
+          ...cart??[],
+          {
+          type: item.id,
+          tastes,
+          border: selectedBorder,
+          sub_total: subTotal()
+        }])
+        navigate("/cart");
+      },
+      
+      footer: (_, { OkBtn, CancelBtn }) => (
+        <>
+          <Button>
+            <Link to={"/cart"}>
+              Não Adicionar
+            </Link>
+          </Button>
+          <CancelBtn />
+          <OkBtn />
+        </>
+      ),
+    });
+  };
+
   return (
     <div className="container">
-      <FloatButton badge={{ count: cart.length }} icon={<ShoppingCartOutlined />} onClick={() => navigate("/cart")}/>
+      <FloatButton badge={{ count: cart.length }} icon={<ShoppingCartOutlined />} onClick={() => {
+        if(tastes.length > 0) {
+          warning_modal();
+        } else {
+          navigate("/cart");
+        }
+      }}/>
       {contextModalHolder}
       <picture>
       <div className="control" >
