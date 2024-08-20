@@ -24,13 +24,17 @@ export const Cart = () => {
         <div className="empty-cart">
           <p className="empty-cart-text">Seu carrinho está vazio =(</p>
         </div>:
-        cart.map((item, index) => {
-          return (
-            <CartItem item={item} index={index} key={index}/>
-          )
-        })
+        <> 
+          {
+            cart.map((item, index) => {
+              return (
+                <CartItem item={item} index={index} key={index}/>
+              )
+            })
+          } 
+          <CartForm />
+        </>
       }
-      <CartForm />
     </div>
   );
 }
