@@ -83,7 +83,7 @@ export class Message {
           "to": to,
           "type": "template",
           "template": {
-            "name": "gui_pizza",
+            "name": "gui_pedidos",
             "language": {
               "code": "pt_BR"
             },
